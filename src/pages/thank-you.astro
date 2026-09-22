@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import BookButton from '../components/BookButton.astro';
+import ApptOnly from '../components/ApptOnly.astro';
+import { business as b } from '../data/business.js';
+---
+<Base
+  title="Thank you | Skin Restore"
+  description="Your message has been sent to Skin Restore in San Clemente. We'll get back to you shortly."
+  noindex
+>
+  <section class="section page ty">
+    <div class="prose">
+      <h1>Thank you — your message is on its way</h1>
+      <p class="ty__lede">
+        We'll get back to you as soon as we're between appointments. If it's quicker
+        for you, call <a href={b.phoneHref}>{b.phone}</a> and we'll talk it through.
+      </p>
+      <div class="ty__appt"><ApptOnly /></div>
+      <div class="ty__cta">
+        <BookButton label="Book an appointment" />
+        <a class="btn btn--quiet" href="/treatments">Browse treatments</a>
+      </div>
+      <p class="ty__addr">
+        {b.street}, {b.city}, {b.region} {b.postal}
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .ty { padding-block: clamp(3rem, 8vw, 6rem); }
+  .ty h1 { max-width: 18ch; }
+  .ty__lede { font-family: var(--display); font-size: var(--t-md); color: var(--ink-70); margin-top: var(--s-5); }
+  .ty__appt { margin-top: var(--s-5); }
+  .ty__cta { display: flex; gap: var(--s-4); flex-wrap: wrap; margin-top: var(--s-6); }
+  .ty__addr { font-size: var(--t-sm); color: var(--ink-70); margin-top: var(--s-6); }
+</style>

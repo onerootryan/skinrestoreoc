@@ -1,0 +1,66 @@
+---
+import { business as b } from '../data/business.js';
+const year = new Date().getFullYear();
+---
+<footer class="ft">
+  <div class="page ft__grid">
+    <div>
+      <img class="ft__logo" src="/images/skin-restore-logo.png" alt="Skin Restore" width="1600" height="469" />
+      <p class="ft__addr">
+        {b.street}<br />{b.city}, {b.region} {b.postal}<br />
+        <a class="tel" href={b.phoneHref}>{b.phone}</a>
+      </p>
+      <p class="ft__addr ft__hours">
+        <strong>{b.hoursNote}</strong><br />{b.hoursDisplay}
+      </p>
+    </div>
+    <div>
+      <h4 class="ft__h">Treatments</h4>
+      <a href="/diamondglow">DiamondGlow</a>
+      <a href="/microchanneling">Micro Channeling</a>
+      <a href="/rf-skin-tightening">Wonder Touch RF</a>
+      <a href="/oxygen-facial">BREEZE Cryo Oxygen</a>
+      <a href="/cryo-facial">Cool Restore Cryo</a>
+      <a href="/teen-facial">Teen Facial</a>
+      <a href="/dermaplaning">DermaPlane</a>
+      <a href="/chemical-peels">Chemical Peels</a>
+      <a href="/biorepeel">BioRePeel</a>
+      <a href="/back-facial">Back Facial</a>
+      <a href="/brow-tint">Brow Tint</a>
+    </div>
+    <div>
+      <h4 class="ft__h">Visit</h4>
+      <a href="/treatments">All treatments</a>
+      <a href="/about">About Demi</a>
+      <a href="/contact">Contact</a>
+      {b.shopLive && <a href={b.shopUrl}>Shop skincare</a>}
+    </div>
+  </div>
+  <div class="page ft__legal">
+    <p>
+      {b.practitioner}, {b.credential} #{b.licenseNumber} · {b.licenseBoard}
+    </p>
+    <p>Serving {b.areasServed.slice(0, 4).join(', ')} and greater Orange County. © {year} Skin Restore.</p>
+  </div>
+</footer>
+
+<style>
+  .ft { border-top: 1px solid var(--rule); background: var(--mist); padding-block: var(--s-7) var(--s-5); margin-top: var(--s-8); }
+  .ft__grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: var(--s-6); }
+  .ft__grid > div { display: flex; flex-direction: column; }
+  /* flex column children stretch by default, which squashes the logo —
+     align-self + explicit width keeps its aspect ratio */
+  .ft__logo {
+    align-self: flex-start;
+    width: 11.5rem; height: auto;
+    margin-bottom: var(--s-4);
+  }
+  .ft__addr { font-size: var(--t-sm); color: var(--ink-70); line-height: 1.7; margin-bottom: var(--s-3); }
+  .ft__hours strong { color: var(--marine); font-weight: 600; font-size: var(--t-base); }
+  .ft__h { font-size: var(--t-xs); letter-spacing: 0.06em; color: var(--ink-40); margin-bottom: var(--s-3); font-weight: 600; }
+  .ft__grid a { font-size: var(--t-sm); color: var(--ink); text-decoration: none; padding-block: 0.22rem; }
+  .ft__grid a:hover { color: var(--marine); text-decoration: underline; }
+  .ft__legal { border-top: 1px solid var(--rule); margin-top: var(--s-6); padding-top: var(--s-5); }
+  .ft__legal p { font-size: var(--t-xs); color: var(--ink-40); margin: 0 0 var(--s-1); max-width: none; }
+  @media (max-width: 48rem) { .ft__grid { grid-template-columns: 1fr 1fr; } .ft__grid > div:first-child { grid-column: 1 / -1; } }
+</style>

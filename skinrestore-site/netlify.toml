@@ -1,0 +1,42 @@
+[build]
+  command = "npm run build"
+  publish  = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Force HTTPS + canonical host (fixes the http://www duplicate found in the audit)
+[[redirects]]
+  from = "https://skinrestoreoc.com/*"
+  to = "https://www.skinrestoreoc.com/:splat"
+  status = 301
+  force = true
+
+# Retired Square product + shop URLs -> 404 deliberately (zero traffic, zero backlinks)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Old Square Online booking path -> Square Appointments, so bookmarks,
+# old Google results and Instagram bio links keep working after cutover.
+[[redirects]]
+  from = "/s/appointments"
+  to = "https://book.squareup.com/appointments/iqeoshu0dfmonc/location/LRDN4QX13C2V0/services"
+  status = 301
+  force = true
+
+# Short, memorable link for business cards, texts and Instagram: skinrestoreoc.com/book
+[[redirects]]
+  from = "/book"
+  to = "https://book.squareup.com/appointments/iqeoshu0dfmonc/location/LRDN4QX13C2V0/services"
+  status = 302
+
+# Services and Treatments are now one page. /services was live on the old Square
+# site (and crawled), so send it — and any old links to it — to /treatments.
+[[redirects]]
+  from = "/services"
+  to = "/treatments"
+  status = 301
+  force = true

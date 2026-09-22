@@ -18,7 +18,7 @@ ORDER = ['/', '/treatments',
          '/diamondglow', '/microchanneling', '/rf-skin-tightening', '/oxygen-facial',
          '/cryo-facial', '/teen-facial', '/dermaplaning', '/chemical-peels',
          '/biorepeel', '/back-facial', '/brow-tint',
-         '/about', '/contact', '/thank-you']
+         '/about', '/contact']
 
 def route_of(p):
     return '/' if p.stem == 'index' else '/' + p.stem
