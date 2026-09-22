@@ -1,0 +1,130 @@
+---
+import { business as b } from '../data/business.js';
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const { overlay = false } = Astro.props;
+const treatments = [
+  { href: '/diamondglow', label: 'DiamondGlow' },
+  { href: '/microchanneling', label: 'Micro Channeling' },
+  { href: '/rf-skin-tightening', label: 'Wonder Touch RF' },
+  { href: '/oxygen-facial', label: 'BREEZE Cryo Oxygen' },
+  { href: '/cryo-facial', label: 'Cool Restore Cryo' },
+  { href: '/teen-facial', label: 'Teen Facial' },
+  { href: '/dermaplaning', label: 'DermaPlane' },
+  { href: '/chemical-peels', label: 'Chemical Peels' },
+  { href: '/biorepeel', label: 'BioRePeel' },
+  { href: '/back-facial', label: 'Back Facial' },
+  { href: '/brow-tint', label: 'Brow Tint' },
+];
+---
+<header class={overlay ? "nav nav--overlay" : "nav"}>
+  <div class="page nav__inner">
+    <a class="nav__brand" href="/">
+      <img class="nav__logo nav__logo--dark" src="/images/skin-restore-logo.png" alt="Skin Restore" width="1600" height="469" />
+      <img class="nav__logo nav__logo--light" src="/images/skin-restore-logo-white.png" alt="" aria-hidden="true" width="1600" height="469" />
+    </a>
+
+    <input type="checkbox" id="navtoggle" class="visually-hidden nav__cb" />
+    <label for="navtoggle" class="nav__burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="nav__menu" aria-label="Main">
+      <details class="nav__dd">
+        <summary>Treatments</summary>
+        <div class="nav__ddmenu">
+          <a class="nav__ddall" href="/treatments" aria-current={path === '/treatments' ? 'page' : undefined}>All treatments</a>
+          {treatments.map((t) => (
+            <a href={t.href} aria-current={path === t.href ? 'page' : undefined}>{t.label}</a>
+          ))}
+        </div>
+      </details>
+      <a href="/about" aria-current={path === '/about' ? 'page' : undefined}>About</a>
+      {b.shopLive && <a href={b.shopUrl}>Shop</a>}
+      <a href="/contact" aria-current={path === '/contact' ? 'page' : undefined}>Contact</a>
+      <a class="tel nav__tel" href={b.phoneHref}>{b.phone}</a>
+    </nav>
+  </div>
+  <script is:inline>
+    (function () {
+      var h = document.currentScript && document.currentScript.closest('.nav');
+      if (!h) return;
+      function update() {
+        if (!h.classList.contains('nav--overlay')) { h.classList.remove('is-solid'); return; }
+        h.classList.toggle('is-solid', window.scrollY > 24);
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.__navUpdate = update;
+      update();
+    })();
+  </script>
+</header>
+
+<style>
+  .nav { border-bottom: 1px solid var(--rule); background: var(--paper); position: sticky; top: 0; z-index: 50; }
+  .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--s-5); min-height: 5.4rem; }
+  .nav__brand { display: block; text-decoration: none; padding-block: 0.9rem; }
+  /* sizing only — visibility is handled per-logo below, so nothing competes */
+  .nav__brand img { width: auto; height: clamp(2.2rem, 1.5rem + 1.6vw, 3.1rem); }
+  .nav__menu { display: flex; align-items: center; gap: var(--s-5); }
+  .nav__menu > a, .nav__dd summary {
+    font-size: var(--t-sm); color: var(--ink); text-decoration: none; cursor: pointer;
+  }
+  .nav__menu > a:hover, .nav__dd summary:hover { color: var(--marine); }
+  .nav__dd { position: relative; }
+  .nav__dd summary { list-style: none; }
+  .nav__dd summary::-webkit-details-marker { display: none; }
+  .nav__ddmenu {
+    position: absolute; top: calc(100% + 0.9rem); left: -1rem; min-width: 15rem;
+    background: var(--paper); border: 1px solid var(--rule); padding: var(--s-3) 0;
+    display: flex; flex-direction: column;
+  }
+  .nav__ddmenu a { padding: 0.45rem 1rem; font-size: var(--t-sm); color: var(--ink); text-decoration: none; }
+  .nav__ddmenu a:hover { background: var(--mist); color: var(--marine); }
+  .nav__ddall { font-weight: 600; border-bottom: 1px solid var(--rule); margin-bottom: 0.3rem; padding-bottom: 0.6rem !important; }
+  .nav__cb, .nav__burger { display: none; }
+
+  /* ---- Overlay mode (homepage): transparent over the hero photo ---- */
+  .nav__logo--dark { display: block; }
+  .nav__logo--light { display: none; }
+  .nav--overlay {
+    position: fixed; left: 0; right: 0; top: 0;
+    background: transparent; border-bottom-color: transparent;
+    transition: background-color .25s ease, border-color .25s ease;
+  }
+  .nav--overlay .nav__logo--dark { display: none; }
+  .nav--overlay .nav__logo--light { display: block; }
+  .nav--overlay .nav__menu > a,
+  .nav--overlay .nav__dd summary,
+  .nav--overlay .nav__tel { color: #fff; }
+  .nav--overlay .nav__burger span { background: #fff; }
+
+  /* once scrolled — or when the mobile menu is open — it becomes the normal header */
+  .nav--overlay.is-solid,
+  .nav--overlay:has(.nav__cb:checked) { background: var(--paper); border-bottom-color: var(--rule); }
+  .nav--overlay.is-solid .nav__logo--dark,
+  .nav--overlay:has(.nav__cb:checked) .nav__logo--dark { display: block; }
+  .nav--overlay.is-solid .nav__logo--light,
+  .nav--overlay:has(.nav__cb:checked) .nav__logo--light { display: none; }
+  .nav--overlay.is-solid .nav__menu > a,
+  .nav--overlay.is-solid .nav__dd summary { color: var(--ink); }
+  .nav--overlay.is-solid .nav__tel { color: var(--ink-70); }
+  .nav--overlay.is-solid .nav__burger span,
+  .nav--overlay:has(.nav__cb:checked) .nav__burger span { background: var(--ink); }
+
+  @media (max-width: 56rem) {
+    .nav__burger { display: flex; flex-direction: column; gap: 4px; cursor: pointer; padding: 0.5rem; }
+    .nav__burger span { display: block; width: 22px; height: 1.5px; background: var(--ink); }
+    .nav__menu {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; align-items: flex-start; gap: 0;
+      background: var(--paper); border-bottom: 1px solid var(--rule);
+      padding: var(--s-4) var(--gutter) var(--s-5);
+    }
+    .nav__cb:checked ~ .nav__menu { display: flex; }
+    .nav--overlay .nav__menu > a, .nav--overlay .nav__dd summary { color: var(--ink); }
+    .nav--overlay .nav__tel { color: var(--ink-70); }
+    .nav__menu > a, .nav__dd { width: 100%; padding-block: 0.6rem; border-top: 1px solid var(--rule); }
+    .nav__dd summary { padding-block: 0.6rem; }
+    .nav__ddmenu { position: static; border: 0; padding: 0 0 var(--s-3) var(--s-4); min-width: 0; }
+  }
+</style>

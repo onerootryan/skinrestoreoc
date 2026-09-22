@@ -1,0 +1,161 @@
+---
+import Base from '../layouts/Base.astro';
+import BookButton from '../components/BookButton.astro';
+import ApptOnly from '../components/ApptOnly.astro';
+import { business as b } from '../data/business.js';
+
+const treatments = [
+  { href: '/diamondglow', name: 'DiamondGlow',
+    line: 'Exfoliates, extracts and infuses serums in a single pass. Skin looks brighter walking out the door, with no downtime.' },
+  { href: '/microchanneling', name: 'Micro Channeling',
+    line: 'Also called nano needling. Creates microscopic channels to stimulate your own collagen and drive growth factor serums deep into the skin.' },
+  { href: '/rf-skin-tightening', name: 'Wonder Touch RF',
+    line: 'Radiofrequency energy warms the deeper layers of skin to stimulate collagen and firm the surface. Lifting and smoothing with no downtime.' },
+  { href: '/oxygen-facial', name: 'BREEZE Cryo Oxygen',
+    line: 'Needle-free, touch-free delivery of actives using pressurized air. Lymphatic drainage, exfoliation and nutrient infusion in one comfortable treatment.' },
+  { href: '/cryo-facial', name: 'Cool Restore Cryo',
+    line: 'Controlled cooling to firm, calm and refresh. The treatment to book before an event.' },
+  { href: '/teen-facial', name: 'Teen Facial',
+    line: 'A proper professional treatment for teenage skin — safe extractions, a calming finish, and a routine short enough to actually follow.' },
+  { href: '/dermaplaning', name: 'DermaPlane',
+    line: 'Removes dead surface skin and fine vellus hair for a smooth, luminous finish. Available as a full standalone treatment or as an add-on.' },
+  { href: '/chemical-peels', name: 'Chemical Peels',
+    line: 'Mild to moderate peels for tone, texture and pigmentation, customized to your skin.' },
+  { href: '/biorepeel', name: 'BioRePeel',
+    line: 'A 35% TCA peel designed to renew the skin with minimal visible peeling. The strength of a TCA peel, without the week of flaking.' },
+  { href: '/back-facial', name: 'Back Facial',
+    line: 'Deep cleansing, exfoliation and extractions for back breakouts, congestion and rough texture — the skin you can\'t see or reach.' },
+  { href: '/brow-tint', name: 'Brow Tint',
+    line: 'Semi-permanent tint for fuller-looking, defined brows in about fifteen minutes, with the shade matched to your coloring.' },
+];
+
+const alsoAvailable = [
+  { name: 'DiamondGlow Chest with Peel', line: 'DiamondGlow for the décolleté, finished with a peel. The chest shows sun damage earlier than the face and is usually left out of a routine entirely.' },
+  { name: 'Chest treatment', line: 'Congestion and sun damage on the chest, treated separately from the face. For the back, see the Back Facial.' },
+];
+---
+<Base
+  title="Facial & Skin Treatments in San Clemente"
+  description="Medical-grade facials in San Clemente, CA — DiamondGlow, microchanneling, cryo oxygen, RF tightening and dermaplaning."
+>
+  <section class="section page intro">
+    <div class="intro__fig">
+      <img
+        src="/images/treatment-room.jpg"
+        alt="The treatment room at Skin Restore, San Clemente — treatment bed, magnifying lamp and equipment"
+        width="1200" height="1600" fetchpriority="high"
+      />
+    </div>
+    <div class="intro__text prose">
+      <h1>Medical-grade skin treatments in San Clemente</h1>
+      <p class="intro__lede">Not every facial is the same, and not every skin needs the same thing.</p>
+      <p>
+        At Skin Restore, treatments are built around what your skin is actually doing
+        right now — not a menu item you picked off a list. Every appointment starts
+        with a proper look at your skin, a conversation about what's bothering you,
+        and a plan that makes sense for your budget and your calendar.
+      </p>
+      <p>
+        We work with medical-grade products and clean ingredients, and we'll tell you
+        honestly when a treatment isn't right for you.
+      </p>
+    </div>
+  </section>
+
+  <section class="section--wash">
+    <div class="page section">
+      <h2>Choose your treatment</h2>
+      <ul class="tlist">
+        {treatments.map((t) => (
+          <li class="tlist__item">
+            <a class="tlist__link" href={t.href}>
+              <h3 class="tlist__name">{t.name}</h3>
+              <p class="tlist__line">{t.line}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section page">
+    <h2>Also available</h2>
+    <ul class="alist">
+      {alsoAvailable.map((a) => (
+        <li class="alist__item">
+          <h3 class="alist__name">{a.name}</h3>
+          <p class="alist__line">{a.line}</p>
+        </li>
+      ))}
+    </ul>
+    <div class="cta-row">
+      <BookButton label="Book an appointment" />
+      <a class="tel" href={b.phoneHref}>or call {b.phone}</a>
+    </div>
+  </section>
+
+  <section class="section--dark">
+    <div class="page section prose">
+      <h2>Not sure where to start?</h2>
+      <p>
+        That's the most common way people come in, and it's the right reason. Book a
+        consultation and we'll look at your skin together, talk through what's
+        realistic, and build a plan. No pressure and no packages you don't need.
+      </p>
+      <div class="cta-row">
+        <BookButton label="Book a consultation" tone="light" />
+        <a class="tel" href={b.phoneHref}>or call {b.phone}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section page prose">
+    <h2>Visit us</h2>
+    <p class="visit__addr">
+      <strong>{b.street}</strong><br />
+      {b.city}, {b.region} {b.postal}
+    </p>
+    <div class="visit__hours"><ApptOnly /></div>
+    <p class="visit__served">
+      Serving {b.areasServed.slice(0, 4).join(', ')} and greater Orange County.
+    </p>
+  </section>
+</Base>
+
+<style>
+  .intro { display: grid; grid-template-columns: 0.8fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+  .intro__fig img { aspect-ratio: 3 / 4; object-fit: cover; width: 100%; border-radius: 4px; }
+  .intro__text h1 { max-width: 16ch; }
+  .intro__lede {
+    font-family: var(--display); font-weight: 400; font-size: var(--t-md);
+    color: var(--ink-70); margin-top: var(--s-5);
+  }
+
+  .tlist { list-style: none; padding: 0; margin: var(--s-6) 0 0; max-width: none; border-top: 1px solid var(--rule); }
+  .tlist__item { margin: 0; border-bottom: 1px solid var(--rule); }
+  .tlist__link {
+    display: grid; grid-template-columns: 16rem 1fr; gap: var(--s-5);
+    padding-block: var(--s-4); text-decoration: none; color: var(--ink); align-items: baseline;
+  }
+  .tlist__link:hover .tlist__name { color: var(--marine); }
+  .tlist__name { font-size: var(--t-md); }
+  .tlist__line { font-size: var(--t-sm); color: var(--ink-70); margin: 0; max-width: 56ch; }
+
+  .alist { list-style: none; padding: 0; margin: var(--s-5) 0 0; max-width: none;
+           display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: var(--s-5) var(--s-6); }
+  .alist__item { margin: 0; }
+  .alist__name { font-size: var(--t-base); font-weight: 400; margin-bottom: var(--s-2); }
+  .alist__line { font-size: var(--t-sm); color: var(--ink-70); margin: 0; }
+
+  .cta-row { display: flex; align-items: center; gap: var(--s-5); flex-wrap: wrap; margin-top: var(--s-6); }
+
+  .visit__addr, .visit__hours { font-size: var(--t-base); line-height: 1.8; margin-bottom: var(--s-4); }
+  .visit__flag { display: block; font-family: var(--display); font-size: var(--t-md); color: var(--marine); letter-spacing: 0.02em; }
+  .visit__served { font-size: var(--t-sm); color: var(--ink-70); }
+
+  @media (max-width: 56rem) {
+    .intro { grid-template-columns: 1fr; }
+    .intro__fig { max-width: 24rem; }
+    .tlist__link { grid-template-columns: 1fr; gap: var(--s-2); }
+  }
+</style>
