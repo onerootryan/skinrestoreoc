@@ -1,0 +1,32 @@
+---
+const { r, featured = false } = Astro.props;
+---
+<figure class={featured ? 'rv rv--featured' : 'rv'}>
+  <blockquote><p>{r.quote}</p></blockquote>
+  <figcaption>
+    <span class="rv__name">{r.name}</span>
+    {r.note && <span class="rv__note">{r.note}</span>}
+  </figcaption>
+</figure>
+
+<style>
+  .rv { margin: 0; border-top: 1px solid var(--rule); padding-top: var(--s-5); }
+  .rv blockquote p { font-family: var(--display); font-weight: 300; font-size: var(--t-base); line-height: 1.6; color: var(--ink); max-width: 46ch; margin: 0; }
+  .rv figcaption { margin-top: var(--s-4); display: flex; flex-wrap: wrap; gap: 0.2rem 0.6rem; align-items: baseline; }
+  .rv__name { font-size: var(--t-sm); font-weight: 600; color: var(--ink); }
+  .rv__note { font-size: var(--t-xs); color: var(--ink-40); letter-spacing: 0.03em; }
+
+  .rv--featured { border-top: 0; padding-top: 0; }
+  .rv--featured blockquote p { font-size: var(--t-lg); line-height: 1.4; max-width: 34ch; color: var(--ink); }
+  .rv--featured blockquote p::before { content: '“'; color: var(--brand); margin-right: 0.05em; }
+  .rv--featured blockquote p::after  { content: '”'; color: var(--brand); }
+
+  /* on dark bands */
+  :global(.section--dark) .rv { border-top-color: var(--rule-deep); }
+  :global(.section--dark) .rv blockquote p { color: var(--on-deep); }
+  :global(.section--dark) .rv__name { color: #fff; }
+  :global(.section--dark) .rv__note { color: var(--on-deep-2); }
+  :global(.section--dark) .rv--featured blockquote p { color: #fff; }
+  :global(.section--dark) .rv--featured blockquote p::before,
+  :global(.section--dark) .rv--featured blockquote p::after { color: var(--brand); }
+</style>

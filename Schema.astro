@@ -1,0 +1,69 @@
+---
+import { business as b, siteUrl } from '../data/business.js';
+const { service, faqs } = Astro.props;
+
+const localBusiness = {
+  '@type': ['HealthAndBeautyBusiness', 'DaySpa'],
+  '@id': `${siteUrl}/#business`,
+  name: b.name,
+  url: siteUrl,
+  telephone: b.phone,
+  priceRange: b.priceRange,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: b.street,
+    addressLocality: b.city,
+    addressRegion: b.region,
+    postalCode: b.postal,
+    addressCountry: b.country,
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: b.lat, longitude: b.lng },
+  areaServed: b.areasServed.map((n) => ({ '@type': 'Place', name: n })),
+  openingHoursSpecification: b.hours.map((h) => ({
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: h.days,
+    opens: h.open,
+    closes: h.close,
+  })),
+  founder: {
+    '@type': 'Person',
+    name: b.practitioner,
+    jobTitle: b.credential,
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'license',
+      recognizedBy: { '@type': 'Organization', name: b.licenseBoard },
+      identifier: b.licenseNumber,
+    },
+  },
+  sameAs: Object.values(b.social).filter(Boolean),
+};
+
+const graph = [localBusiness];
+
+if (service) {
+  graph.push({
+    '@type': 'Service',
+    '@id': `${siteUrl}${Astro.url.pathname}#service`,
+    name: service.name,
+    serviceType: service.type ?? service.name,
+    description: service.description,
+    provider: { '@id': `${siteUrl}/#business` },
+    areaServed: b.areasServed.map((n) => ({ '@type': 'Place', name: n })),
+    url: `${siteUrl}${Astro.url.pathname}`,
+  });
+}
+
+if (faqs?.length) {
+  graph.push({
+    '@type': 'FAQPage',
+    '@id': `${siteUrl}${Astro.url.pathname}#faq`,
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  });
+}
+---
+<script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })} is:inline />

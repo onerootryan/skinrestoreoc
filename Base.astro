@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Schema from '../components/Schema.astro';
+import { siteUrl } from '../data/business.js';
+
+const { title, description, service, faqs, ogImage = '/images/waiting-room.jpg', overlayNav = false, noindex = false } = Astro.props;
+// Build output is .html files, but the public URLs are extensionless.
+// Strip .html and index so canonicals point at the real URL.
+const routePath = Astro.url.pathname
+  .replace(/index\.html$/, '')
+  .replace(/\.html$/, '')
+  .replace(/\/$/, '');
+const canonical = routePath ? new URL(routePath, siteUrl).href : `${siteUrl}/`;
+// Square capped descriptions at ~120 chars. Netlify doesn't — Google shows ~155.
+const fullTitle = title.includes('Skin Restore') ? title : `${title} | Skin Restore`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Skin Restore" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(ogImage, siteUrl).href} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="theme-color" content="#16212B" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@400;500;600&display=swap"
+    />
+
+    <Schema service={service} faqs={faqs} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <Nav overlay={overlayNav} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

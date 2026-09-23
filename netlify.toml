@@ -40,3 +40,119 @@
   to = "/treatments"
   status = 301
   force = true
+
+# ---------------------------------------------------------------------------
+# Ahrefs crawl fixes
+# ---------------------------------------------------------------------------
+
+# The old Square site used /contact-us; the new page is /contact.
+[[redirects]]
+  from = "/contact-us"
+  to = "/contact"
+  status = 301
+  force = true
+
+# Astro emits sitemap-index.xml; /sitemap.xml is what tools and people try.
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 301
+  force = true
+
+# Build output is .html files, but the public URLs are extensionless.
+# Without these, every page is reachable at two URLs (duplicate content).
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/back-facial.html"
+  to = "/back-facial"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/biorepeel.html"
+  to = "/biorepeel"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/brow-tint.html"
+  to = "/brow-tint"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/chemical-peels.html"
+  to = "/chemical-peels"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cryo-facial.html"
+  to = "/cryo-facial"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dermaplaning.html"
+  to = "/dermaplaning"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/diamondglow.html"
+  to = "/diamondglow"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/microchanneling.html"
+  to = "/microchanneling"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/oxygen-facial.html"
+  to = "/oxygen-facial"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/rf-skin-tightening.html"
+  to = "/rf-skin-tightening"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/teen-facial.html"
+  to = "/teen-facial"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/thank-you.html"
+  to = "/thank-you"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/treatments.html"
+  to = "/treatments"
+  status = 301
+  force = true
