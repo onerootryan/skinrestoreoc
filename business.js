@@ -43,10 +43,10 @@ export const business = {
   appointmentOnly: true,
   hoursNote: 'By appointment only',
   hours: [
-    { days: ['Tuesday', 'Wednesday', 'Thursday', 'Friday'], open: '10:00', close: '18:00' },
+    { days: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], open: '10:00', close: '18:00' },
   ],
-  hoursDisplay: 'Tuesday – Friday, 10am – 6pm',
-  hoursFull: 'By appointment only · Tuesday – Friday, 10am – 6pm',
+  hoursDisplay: 'Tuesday – Saturday, 10am – 6pm',
+  hoursFull: 'By appointment only · Tuesday – Saturday, 10am – 6pm',
   social: {
     google: '', // TODO: Google Business Profile URL
     instagram: 'https://www.instagram.com/Skinrestoreoc',
