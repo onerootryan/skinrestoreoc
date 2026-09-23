@@ -6,7 +6,13 @@ import Schema from '../components/Schema.astro';
 import { siteUrl } from '../data/business.js';
 
 const { title, description, service, faqs, ogImage = '/images/waiting-room.jpg', overlayNav = false, noindex = false } = Astro.props;
-const canonical = new URL(Astro.url.pathname, siteUrl).href.replace(/\/$/, '') || siteUrl;
+// Build output is .html files, but the public URLs are extensionless.
+// Strip .html and index so canonicals point at the real URL.
+const routePath = Astro.url.pathname
+  .replace(/index\.html$/, '')
+  .replace(/\.html$/, '')
+  .replace(/\/$/, '');
+const canonical = routePath ? new URL(routePath, siteUrl).href : `${siteUrl}/`;
 // Square capped descriptions at ~120 chars. Netlify doesn't — Google shows ~155.
 const fullTitle = title.includes('Skin Restore') ? title : `${title} | Skin Restore`;
 ---
