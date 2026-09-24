@@ -1,9 +1,0 @@
----
-import { business as b } from '../data/business.js';
-// tone: 'solid' (default) | 'quiet' | 'light' (on dark or photo) | 'ghost-light'
-const { label = 'Book an appointment', quiet = false, tone, service } = Astro.props;
-const t = tone ?? (quiet ? 'quiet' : 'solid');
-const cls = { solid: 'btn', quiet: 'btn btn--quiet', light: 'btn btn--light', 'ghost-light': 'btn btn--ghost-light' }[t];
-const href = service ? `${b.bookingUrl}?service=${encodeURIComponent(service)}` : b.bookingUrl;
----
-<a class={cls} href={href} target="_blank" rel="noopener">{label}</a>
