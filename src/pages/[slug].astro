@@ -40,7 +40,7 @@ const review = reviewFor[t.slug] ? reviews[reviewFor[t.slug]] : null;
       <div class="intro__appt"><ApptOnly /></div>
     </div>
     <div class="intro__fig">
-      <img src={`/images/${t.image}`} alt={t.alt} width="1200" height="1600" fetchpriority="high" />
+      <img src={`/images/${t.image}`} alt={t.alt} width="1200" height="1600" fetchpriority="high" style={`object-position:${t.pos}`} />
     </div>
   </section>
 
