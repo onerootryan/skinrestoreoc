@@ -20,7 +20,8 @@ OUT = pathlib.Path('src/data/treatments.json')
 # desc:  meta descriptions rewritten for Netlify (~155 chars, no price talk).
 META = {
     'diamondglow': dict(
-        name='DiamondGlow', image='treatment-room.jpg', service='Facial treatment',
+        name='DiamondGlow', image='diamondglow.jpg', service='Facial treatment',
+        alt='The DiamondGlow diamond-tip handpiece resurfacing the cheek while a pro-infusion serum is delivered',
         desc='DiamondGlow facial in San Clemente — exfoliation, extraction and serum infusion in one treatment, with five serum options and no downtime.'),
     'microchanneling': dict(
         name='Micro Channeling', image='microchanneling.jpg', service='Collagen induction treatment',
@@ -32,30 +33,29 @@ META = {
         desc='Wonder Touch radiofrequency skin tightening in San Clemente. Firms, lifts and smooths without surgery, needles or downtime. Results build over a series.'),
     'oxygen-facial': dict(
         name='BREEZE Cryo Oxygen', image='breeze-treatment.jpg', service='Oxygen facial',
-        alt='A client resting during a facial treatment in the studio at Skin Restore, San Clemente',
+        alt='The BREEZE handpiece delivering pressurized air and serum to the cheek during a needle-free oxygen facial',
         desc='BREEZE needle-free oxygen facial in San Clemente — pressurized air infuses actives with lymphatic drainage and exfoliation. Comfortable, no downtime.'),
     'cryo-facial': dict(
         name='Cool Restore Cryo', image='cool-restore.jpg', service='Cryotherapy facial',
         alt='A Cool Restore cryo treatment being applied to a client\'s face at Skin Restore, San Clemente',
         desc='Cool Restore cryo facial in San Clemente. Controlled cooling firms skin, reduces puffiness and calms redness. No downtime — the one to book before an event.'),
     'dermaplaning': dict(
-        name='DermaPlane', image='treatment-room.jpg', service='Dermaplaning',
+        name='DermaPlane', image='dermaplane.jpg', service='Dermaplaning',
+        pos='40% center',
+        alt='A sterile blade held at an angle against the jawline during a dermaplaning treatment',
         desc='Dermaplaning in San Clemente and Orange County. Removes dead skin and fine vellus hair for a smooth, bright finish. Standalone treatment or add-on.'),
     'chemical-peels': dict(
         name='Chemical Peels', image='chemical-peel.jpg', service='Chemical peel',
         alt='A client resting during a chemical peel appointment at Skin Restore, San Clemente',
         desc='Mild to moderate chemical peels in San Clemente for tone, texture and pigmentation — customized to your skin by a licensed esthetician.'),
     'teen-facial': dict(
-        name='Teen Facial', image='treatment-room.jpg', service='Teen facial',
+        name='Teen Facial', image='teen-facial.jpg', service='Teen facial',
+        alt='A high-frequency electrode being applied to the forehead during a teen facial',
         desc='Teen facials in San Clemente — gentle, acne-focused treatment with safe professional extractions and a simple home routine. Parents welcome.'),
-    'back-facial': dict(
-        name='Back Facial', image='treatment-room.jpg', service='Back facial',
-        desc='Back facial in San Clemente — deep cleansing, extractions and a treatment mask for back breakouts, congestion and rough texture. No downtime.'),
-    'brow-tint': dict(
-        name='Brow Tint', image='front-desk.jpg', service='Eyebrow tinting',
-        desc='Brow tinting in San Clemente — fuller-looking, defined brows in about fifteen minutes, with the shade matched to your coloring. By appointment.'),
     'biorepeel': dict(
-        name='BioRePeel', image='spa-hall.jpg', service='Chemical peel',
+        name='BioRePeel', image='biorepeel.jpg', service='Chemical peel',
+        pos='42% center',
+        alt='The BioRePeel solution beading on the skin, applied topically with a needle-free dispenser',
         desc='BioRePeel in San Clemente — a 35% TCA biphasic peel that renews skin with minimal visible peeling. For texture, tone, acne marks and fine lines.'),
 }
 
@@ -132,6 +132,7 @@ def parse_page(block: str):
         'title': (title_m.group(1).strip() if title_m else m['name']),
         'description': m['desc'],
         'image': m['image'],
+        'pos': m.get('pos', 'center center'),
         'alt': m.get('alt') or (alt_m.group(1) if alt_m else f"{m['name']} at Skin Restore, San Clemente"),
         'h1': h1,
         'intro': intro,

@@ -36,8 +36,10 @@ export const business = {
   // nav, the footer, and the homepage product section, all at once.
   shopLive: false,
   shopUrl: 'https://www.skinrestorerx.com',
-  // Photos of identifiable clients appear on the site (BREEZE and Chemical Peels
-  // pages). Written consent confirmed on file by Demi, 22 Sep 2026.
+  // Identifiable people appear on the site.
+  //   Chemical Peels — a client; written consent confirmed by Demi, 22 Sep 2026.
+  //   Teen Facial — licensed stock; model release covers use (confirmed 24 Sep 2026).
+  //   All other treatment photos are manufacturer/licensed material.
   clientPhotoConsent: true,
 
   appointmentOnly: true,

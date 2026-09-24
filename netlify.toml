@@ -74,20 +74,8 @@
   force = true
 
 [[redirects]]
-  from = "/back-facial.html"
-  to = "/back-facial"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/biorepeel.html"
   to = "/biorepeel"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/brow-tint.html"
-  to = "/brow-tint"
   status = 301
   force = true
 
@@ -153,6 +141,32 @@
 
 [[redirects]]
   from = "/treatments.html"
+  to = "/treatments"
+  status = 301
+  force = true
+
+# Back Facial and Brow Tint were live and crawled before being removed.
+# Send those URLs (and their .html forms) to the treatments page, not a 404.
+[[redirects]]
+  from = "/back-facial"
+  to = "/treatments"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/back-facial.html"
+  to = "/treatments"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/brow-tint"
+  to = "/treatments"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/brow-tint.html"
   to = "/treatments"
   status = 301
   force = true

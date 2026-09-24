@@ -5,8 +5,9 @@
     "serviceType": "Facial treatment",
     "title": "DiamondGlow Facial in San Clemente, CA | Skin Restore",
     "description": "DiamondGlow facial in San Clemente — exfoliation, extraction and serum infusion in one treatment, with five serum options and no downtime.",
-    "image": "treatment-room.jpg",
-    "alt": "DiamondGlow facial treatment at Skin Restore med spa, San Clemente",
+    "image": "diamondglow.jpg",
+    "pos": "center center",
+    "alt": "The DiamondGlow diamond-tip handpiece resurfacing the cheek while a pro-infusion serum is delivered",
     "h1": "DiamondGlow Facial in San Clemente",
     "intro": "<p>Three things at once: exfoliate, extract, infuse. Thirty minutes, no downtime, and you look noticeably better walking out than you did walking in.</p>\n<p>DiamondGlow is the treatment we book most often for people who want visible results before a wedding, a reunion or a photoshoot — and for people who just want their skin to look consistently good without committing to recovery time.</p>",
     "sections": [
@@ -65,7 +66,8 @@
     "title": "Needle-Free Oxygen Facial in Orange County | Skin Restore",
     "description": "BREEZE needle-free oxygen facial in San Clemente — pressurized air infuses actives with lymphatic drainage and exfoliation. Comfortable, no downtime.",
     "image": "breeze-treatment.jpg",
-    "alt": "A client resting during a facial treatment in the studio at Skin Restore, San Clemente",
+    "pos": "center center",
+    "alt": "The BREEZE handpiece delivering pressurized air and serum to the cheek during a needle-free oxygen facial",
     "h1": "Needle-Free Oxygen Facial in San Clemente",
     "intro": "<p>Nothing touches your face but air and active ingredients.</p>\n<p>BREEZE™ uses jet-powered technology to drive pressurized air and medical-grade serums into the skin through a needle-free process called hydroporation. It's the most comfortable treatment on our menu, and one of the few genuinely results-driven options for skin that reacts to almost everything.</p>",
     "sections": [
@@ -128,6 +130,7 @@
     "title": "RF Skin Tightening in Orange County, CA | Skin Restore",
     "description": "Wonder Touch radiofrequency skin tightening in San Clemente. Firms, lifts and smooths without surgery, needles or downtime. Results build over a series.",
     "image": "wonder-touch.jpg",
+    "pos": "center center",
     "alt": "A facial treatment being performed with a slow, massage-like technique",
     "h1": "Radiofrequency Skin Tightening in San Clemente",
     "intro": "<p>For skin that's started to lose its firmness — without surgery, needles or downtime.</p>\n<p>Wonder Touch combines radiofrequency energy with a slow, massage-like technique. The RF delivers controlled heat into the deeper layers of your skin: deep enough to prompt collagen production, gentle enough that the treatment itself feels like a warm facial massage.</p>",
@@ -191,6 +194,7 @@
     "title": "Cryo Facial & Skin Firming in San Clemente | Skin Restore",
     "description": "Cool Restore cryo facial in San Clemente. Controlled cooling firms skin, reduces puffiness and calms redness. No downtime — the one to book before an event.",
     "image": "cool-restore.jpg",
+    "pos": "center center",
     "alt": "A Cool Restore cryo treatment being applied to a client's face at Skin Restore, San Clemente",
     "h1": "Cryo Facial in San Clemente",
     "intro": "<p>Cold, controlled and immediate. If you need to look your best tomorrow, this is the appointment to make.</p>\n<p>Cool Restore delivers targeted cooling within a narrow, controlled temperature range — cold enough to firm and de-puff, precise enough that it never disrupts your skin's protective barrier.</p>\n<p>Blood vessels constrict, then flush open again as you warm. The result is skin that looks tighter, calmer and considerably less puffy than it did fifteen minutes earlier.</p>",
@@ -245,8 +249,9 @@
     "serviceType": "Dermaplaning",
     "title": "Dermaplaning in Orange County & San Clemente | Skin Restore",
     "description": "Dermaplaning in San Clemente and Orange County. Removes dead skin and fine vellus hair for a smooth, bright finish. Standalone treatment or add-on.",
-    "image": "treatment-room.jpg",
-    "alt": "Dermaplaning facial treatment at Skin Restore med spa in San Clemente, California",
+    "image": "dermaplane.jpg",
+    "pos": "40% center",
+    "alt": "A sterile blade held at an angle against the jawline during a dermaplaning treatment",
     "h1": "Dermaplaning in San Clemente & Orange County",
     "intro": "<p>No downtime, no recovery, and the smoothest your skin has felt in years.</p>\n<p>Dermaplaning uses a sterile surgical blade held at an angle to sweep away dead surface cells and the fine vellus hair — peach fuzz — that sits on top of them. What's left is skin that catches light instead of dulling it.</p>",
     "sections": [
@@ -309,6 +314,7 @@
     "title": "Chemical Peels in Orange County | Skin Restore, San Clemente",
     "description": "Mild to moderate chemical peels in San Clemente for tone, texture and pigmentation — customized to your skin by a licensed esthetician.",
     "image": "chemical-peel.jpg",
+    "pos": "center center",
     "alt": "A client resting during a chemical peel appointment at Skin Restore, San Clemente",
     "h1": "Chemical Peels in San Clemente & Orange County",
     "intro": "<p>A peel isn't one treatment — it's a category. The difference between a peel that transforms your skin and one that damages it comes down to choosing the right acid, at the right strength, for the right skin.</p>\n<p>That's the part we take seriously. We offer mild through moderate peels, and we'll be direct with you about which one you actually need.</p>",
@@ -367,6 +373,7 @@
     "title": "Microchanneling & Nano Needling, San Clemente",
     "description": "Microchanneling, also called nano needling, in San Clemente. Stimulates your own collagen and drives growth factor serums deeper. Little downtime.",
     "image": "microchanneling.jpg",
+    "pos": "center center",
     "alt": "A microchanneling pen being used during a nano needling treatment",
     "h1": "Microchanneling & Nano Needling in San Clemente",
     "intro": "<p>The treatment that works with your skin rather than on it.</p>\n<p>Microchanneling creates thousands of tiny channels across the surface of the skin. Two things happen as a result: your skin begins producing fresh collagen to repair them, and the serums we apply reach a depth they could never reach on their own.</p>\n<p>The result builds over weeks rather than appearing overnight — and because you're growing your own collagen rather than borrowing someone else's, it lasts.</p>",
@@ -446,8 +453,9 @@
     "serviceType": "Teen facial",
     "title": "Teen Facial in San Clemente & Orange County",
     "description": "Teen facials in San Clemente — gentle, acne-focused treatment with safe professional extractions and a simple home routine. Parents welcome.",
-    "image": "treatment-room.jpg",
-    "alt": "Teen facial treatment at Skin Restore med spa in San Clemente, California",
+    "image": "teen-facial.jpg",
+    "pos": "center center",
+    "alt": "A high-frequency electrode being applied to the forehead during a teen facial",
     "h1": "Teen Facials in San Clemente",
     "intro": "<p>Skin in your teens behaves differently than skin at any other age, and it usually needs less than the internet says it does.</p>\n<p>A teen facial at Skin Restore is a proper professional treatment, not a scaled-down adult facial. We clear congestion safely, calm what's inflamed, and send you home with a routine short enough that you'll actually keep to it.</p>",
     "sections": [
@@ -500,140 +508,14 @@
     ]
   },
   {
-    "slug": "back-facial",
-    "name": "Back Facial",
-    "serviceType": "Back facial",
-    "title": "Back Facial in San Clemente, CA | Skin Restore",
-    "description": "Back facial in San Clemente — deep cleansing, extractions and a treatment mask for back breakouts, congestion and rough texture. No downtime.",
-    "image": "treatment-room.jpg",
-    "alt": "Back facial treatment at Skin Restore in San Clemente, California",
-    "h1": "Back Facial in San Clemente",
-    "intro": "<p>The skin on your back gets the same congestion, breakouts and dullness as your face — and none of the attention, because you can't see it or reach it.</p>\n<p>A back facial — we call it the Backcial — is a proper facial for your back: deep cleansing, exfoliation, extractions and a treatment mask, done by someone who can actually see what's going on. About thirty minutes, and no downtime.</p>",
-    "sections": [
-      {
-        "h2": "What it helps with",
-        "html": "<ul>\n<li>Back breakouts and congestion</li>\n<li>Blackheads and clogged pores across the shoulders and upper back</li>\n<li>Rough, bumpy or uneven texture</li>\n<li>Dullness and dry patches</li>\n<li>Marks left behind by old breakouts</li>\n<li>Getting your back ready for a wedding, a backless dress or a beach trip</li>\n</ul>"
-      },
-      {
-        "h2": "What happens in the appointment",
-        "html": "<p><strong>Deep cleanse.</strong> A thorough cleanse to lift oil, sweat and product buildup from skin that rarely gets properly cleaned.</p>\n<p><strong>Exfoliation.</strong> Clears away dead skin cells so pores can breathe and products can reach the skin.</p>\n<p><strong>Extractions.</strong> Congestion on the back is often deeper and more stubborn than on the face. Clearing it properly, with the right tools and pressure, is the part you can't do yourself.</p>\n<p><strong>Treatment mask.</strong> Chosen for what your skin needs — clarifying for congestion, calming for irritation, hydrating for dryness.</p>\n<p><strong>Home care.</strong> A short routine that fits into your shower, because that's where back care actually happens.</p>"
-      },
-      {
-        "h2": "What to expect",
-        "html": "<p><strong>Length:</strong> About 30 minutes\n<strong>Sensation:</strong> Relaxing for most of it. Extractions can feel briefly uncomfortable.\n<strong>Downtime:</strong> None. Mild redness where extractions were done, usually gone within a few hours.\n<strong>Results:</strong> Skin feels smoother straight away. Breakouts improve over a series, alongside home care.</p>"
-      },
-      {
-        "h2": "When it's more than a facial",
-        "html": "<p>Stubborn back breakouts sometimes have causes a facial alone can't fix — workout clothes left on too long, conditioner rinsing down your back in the shower, or hormones. We'll talk through what might be feeding it.</p>\n<p>If your breakouts are deep, painful and cystic, a dermatologist is the right first step, and we'll tell you so.</p>"
-      },
-      {
-        "h2": "Who shouldn't have it",
-        "html": "<ul>\n<li>An active infection, open wounds or a sunburn on the back</li>\n<li>A rash or skin condition in the area that hasn't been diagnosed</li>\n<li>Isotretinoin (Accutane) within the last six months</li>\n</ul>"
-      },
-      {
-        "h2": "Pricing",
-        "html": "<p>Pricing is confirmed at your consultation, once we've looked at your skin and agreed on a plan. Treatment length, the products we choose, and any add-ons all affect the cost — so we'd rather quote you accurately than guess.</p>\n<p>Call <strong>(949) 545-7919</strong> and we'll talk it through.</p>"
-      }
-    ],
-    "faqs": [
-      {
-        "q": "How often should I get a back facial?",
-        "a": "Every four weeks while you're clearing breakouts, then as maintenance — or once before a particular event."
-      },
-      {
-        "q": "Can I book it before a wedding or event?",
-        "a": "Yes. Book it about a week ahead, so any redness from extractions has well and truly settled."
-      },
-      {
-        "q": "Is it only for acne?",
-        "a": "No. It's just as useful for rough texture, dryness, or skin that simply never gets looked after."
-      },
-      {
-        "q": "Do you treat the chest too?",
-        "a": "Yes — chest treatments are available separately. Mention it when you book."
-      },
-      {
-        "q": "Do men get back facials?",
-        "a": "Often. Back breakouts are common for anyone who trains, surfs or sweats regularly."
-      }
-    ],
-    "related": [
-      "teen-facial",
-      "chemical-peels",
-      "diamondglow"
-    ]
-  },
-  {
-    "slug": "brow-tint",
-    "name": "Brow Tint",
-    "serviceType": "Eyebrow tinting",
-    "title": "Brow Tint in San Clemente, CA | Skin Restore",
-    "description": "Brow tinting in San Clemente — fuller-looking, defined brows in about fifteen minutes, with the shade matched to your coloring. By appointment.",
-    "image": "front-desk.jpg",
-    "alt": "Brow tint appointment at Skin Restore in San Clemente, California",
-    "h1": "Brow Tint in San Clemente",
-    "intro": "<p>Fuller-looking, more defined brows — without pencil, powder or anything permanent.</p>\n<p>A brow tint applies a semi-permanent dye to your brow hairs. Fine, pale or grey hairs that disappear against your skin suddenly show up, and the shape you already have starts to look deliberate. It takes about fifteen minutes, with no recovery at all.</p>",
-    "sections": [
-      {
-        "h2": "What a tint does",
-        "html": "<ul>\n<li>Darkens fine, light or grey hairs so they can actually be seen</li>\n<li>Makes sparse brows look fuller, because hairs you couldn't see now count</li>\n<li>Defines your natural shape rather than drawing on a new one</li>\n<li>Cuts down the time you spend filling your brows in every morning</li>\n</ul>"
-      },
-      {
-        "h2": "Choosing the shade",
-        "html": "<p>We match the tint to your hair color and skin tone. The goal is brows that look like yours on a good day — not brows that arrive before you do.</p>\n<p>If you're unsure, we start a shade lighter. A tint can always go deeper next time, but it can't go lighter.</p>"
-      },
-      {
-        "h2": "What to expect",
-        "html": "<p><strong>Length:</strong> About 10–15 minutes\n<strong>Sensation:</strong> Nothing to speak of. A little cool as the tint goes on.\n<strong>Downtime:</strong> None. You can wear makeup straight away.\n<strong>How long it lasts:</strong> Around three to six weeks, depending on your skin and how quickly your brow hairs cycle.</p>\n<p>It's quick enough to add to the start of a facial, and pairs well with DermaPlane or DiamondGlow.</p>"
-      },
-      {
-        "h2": "The patch test",
-        "html": "<p>Tint is a dye, and a small number of people react to dyes. If you've never had your brows tinted, or you've ever reacted to hair color, we'll do a patch test 24 to 48 hours before your appointment. It takes a minute, and it's the difference between a good result and a bad week.</p>"
-      },
-      {
-        "h2": "Who shouldn't have it",
-        "html": "<ul>\n<li>A known allergy or past reaction to hair dye</li>\n<li>Irritation, a rash or broken skin around the brows</li>\n<li>An eye infection, or recent eye surgery</li>\n<li>Anyone new to tinting who hasn't had a patch test first</li>\n</ul>"
-      },
-      {
-        "h2": "Pricing",
-        "html": "<p>Pricing is confirmed at your appointment. Call <strong>(949) 545-7919</strong> and we'll talk it through.</p>"
-      }
-    ],
-    "faqs": [
-      {
-        "q": "How long does a brow tint last?",
-        "a": "Usually three to six weeks. The tint fades from the skin within a few days, then from the hairs as they naturally shed and regrow."
-      },
-      {
-        "q": "Will it look too dark?",
-        "a": "Not if the shade is chosen properly. We match it to your coloring and start conservatively. A tint looks darkest for the first day or two, then settles."
-      },
-      {
-        "q": "Can I tint my brows if I've had microblading?",
-        "a": "Yes — just tell us. The tint colors your natural hairs, not the pigment in your skin, and we'll match the two."
-      },
-      {
-        "q": "How often should I come in?",
-        "a": "Every four to six weeks keeps your brows consistent."
-      },
-      {
-        "q": "Can I add it to a facial?",
-        "a": "Yes. It's quick, and it's one of the most common add-ons. Mention it when you book."
-      }
-    ],
-    "related": [
-      "dermaplaning",
-      "diamondglow"
-    ]
-  },
-  {
     "slug": "biorepeel",
     "name": "BioRePeel",
     "serviceType": "Chemical peel",
     "title": "BioRePeel in San Clemente & Orange County | Skin Restore",
     "description": "BioRePeel in San Clemente — a 35% TCA biphasic peel that renews skin with minimal visible peeling. For texture, tone, acne marks and fine lines.",
-    "image": "spa-hall.jpg",
-    "alt": "BioRePeel treatment at Skin Restore in San Clemente, CA",
+    "image": "biorepeel.jpg",
+    "pos": "42% center",
+    "alt": "The BioRePeel solution beading on the skin, applied topically with a needle-free dispenser",
     "h1": "BioRePeel in San Clemente",
     "intro": "<p>The benefits of a TCA peel, without a week of peeling.</p>\n<p>BioRePeel is a medical-grade peel from Italy built around a 35% TCA formula — a strength that usually means days of visible shedding. Its biphasic formula is designed to work beneath the surface instead, so you get the renewal without the flaking. Most people go straight back to their day.</p>",
     "sections": [
@@ -647,7 +529,7 @@
       },
       {
         "h2": "What to expect",
-        "html": "<p><strong>Length:</strong> The peel takes about ten minutes; allow extra time for cleansing and aftercare.\n<strong>Sensation:</strong> Tingling and warmth while it works. Very manageable.\n<strong>Downtime:</strong> Minimal. Mild redness that usually settles within hours. Most people see little or no visible peeling.\n<strong>Results:</strong> Skin looks brighter and feels smoother within days. Lasting change builds over a series.</p>\n<p><strong>Protocol:</strong> A series of four to six treatments, spaced one to two weeks apart, gives the best results. A single session gives you a noticeable refresh.</p>"
+        "html": "<p><strong>How it's applied:</strong> Topically, with a needle-free dispenser. Nothing is injected — the solution is worked across the surface of the skin, where it beads as it goes on.</p>\n<p><strong>Length:</strong> The peel takes about ten minutes; allow extra time for cleansing and aftercare.\n<strong>Sensation:</strong> Tingling and warmth while it works. Very manageable.\n<strong>Downtime:</strong> Minimal. Mild redness that usually settles within hours. Most people see little or no visible peeling.\n<strong>Results:</strong> Skin looks brighter and feels smoother within days. Lasting change builds over a series.</p>\n<p><strong>Protocol:</strong> A series of four to six treatments, spaced one to two weeks apart, gives the best results. A single session gives you a noticeable refresh.</p>"
       },
       {
         "h2": "Before and after your appointment",
