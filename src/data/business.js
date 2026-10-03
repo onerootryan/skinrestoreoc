@@ -51,8 +51,8 @@ export const business = {
   hoursFull: 'By appointment only · Tuesday – Saturday, 10am – 6pm',
   social: {
     google: '', // TODO: Google Business Profile URL
-    instagram: 'https://www.instagram.com/Skinrestoreoc',
-    facebook: 'https://www.facebook.com/skinrestoreoc',
+    instagram: 'https://www.instagram.com/skinrestoreoc/',
+    facebook: 'https://www.facebook.com/skinrestoreoc/',
     yelp: '',
   },
 };
