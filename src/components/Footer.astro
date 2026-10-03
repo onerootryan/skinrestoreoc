@@ -13,6 +13,29 @@ const year = new Date().getFullYear();
       <p class="ft__addr ft__hours">
         <strong>{b.hoursNote}</strong><br />{b.hoursDisplay}
       </p>
+
+      <ul class="ft__social">
+        {b.social.instagram && (
+          <li>
+            <a href={b.social.instagram} target="_blank" rel="noopener" aria-label="Skin Restore on Instagram">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.7" />
+                <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7" />
+                <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" />
+              </svg>
+            </a>
+          </li>
+        )}
+        {b.social.facebook && (
+          <li>
+            <a href={b.social.facebook} target="_blank" rel="noopener" aria-label="Skin Restore on Facebook">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M13.6 21v-7.5h2.5l.4-2.9h-2.9V8.7c0-.8.2-1.4 1.4-1.4h1.6V4.7c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.1H8v2.9h2.5V21h3.1z" />
+              </svg>
+            </a>
+          </li>
+        )}
+      </ul>
     </div>
     <div>
       <h4 class="ft__h">Treatments</h4>
@@ -54,6 +77,14 @@ const year = new Date().getFullYear();
     margin-bottom: var(--s-4);
   }
   .ft__addr { font-size: var(--t-sm); color: var(--ink-70); line-height: 1.7; margin-bottom: var(--s-3); }
+  .ft__social { list-style: none; display: flex; gap: var(--s-3); padding: 0; margin: 0 0 var(--s-3); }
+  .ft__social li { margin: 0; }
+  .ft__social a {
+    display: grid; place-items: center; width: 2.25rem; height: 2.25rem;
+    border: 1px solid var(--rule); border-radius: 50%;
+    color: var(--ink-70); transition: color .15s ease, border-color .15s ease, background-color .15s ease;
+  }
+  .ft__social a:hover { color: #fff; background: var(--marine); border-color: var(--marine); }
   .ft__hours strong { color: var(--marine); font-weight: 600; font-size: var(--t-base); }
   .ft__h { font-size: var(--t-xs); letter-spacing: 0.06em; color: var(--ink-40); margin-bottom: var(--s-3); font-weight: 600; }
   .ft__grid a { font-size: var(--t-sm); color: var(--ink); text-decoration: none; padding-block: 0.22rem; }
