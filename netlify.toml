@@ -11,7 +11,11 @@
   to = "https://www.skinrestoreoc.com/:splat"
   status = 301
   force = true
-
+   [[redirects]]
+     from = "http://skinrestoreoc.com/*"
+     to = "https://www.skinrestoreoc.com/:splat"
+     status = 301
+     force = true
 # Retired Square product + shop URLs -> 404 deliberately (zero traffic, zero backlinks)
 [[headers]]
   for = "/*"
