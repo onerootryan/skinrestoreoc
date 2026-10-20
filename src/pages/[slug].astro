@@ -31,6 +31,7 @@ const review = reviewFor[t.slug] ? reviews[reviewFor[t.slug]] : null;
 
   <section class="page intro">
     <div class="intro__text">
+      <p class="intro__loc">{b.city}, CA</p>
       <h1>{t.h1}</h1>
       <div class="intro__body prose" set:html={t.intro} />
       <div class="cta-row">
@@ -107,7 +108,7 @@ const review = reviewFor[t.slug] ? reviews[reviewFor[t.slug]] : null;
 
   <section class="section--dark">
     <div class="page section closer">
-      <h2>Book {t.name} in San Clemente</h2>
+      <h2>Book {t.name}</h2>
       <ApptOnly tone="light" />
       <div class="cta-row">
         <BookButton label="Book an appointment" tone="light" />
@@ -123,6 +124,7 @@ const review = reviewFor[t.slug] ? reviews[reviewFor[t.slug]] : null;
   .crumbs a:hover { color: var(--marine); text-decoration: underline; }
 
   .intro { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; padding-block: var(--s-6) var(--s-8); }
+  .intro__loc { font-size: var(--t-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-40); margin: 0 0 var(--s-3); }
   .intro__text h1 { max-width: 16ch; }
   .intro__body { margin-top: var(--s-5); }
   .intro__body :global(p:first-child) { font-family: var(--display); font-size: var(--t-md); color: var(--ink-70); }
