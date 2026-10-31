@@ -6,6 +6,9 @@ import { business as b } from '../data/business.js';
 import { reviews } from '../data/reviews.js';
 import Review from '../components/Review.astro';
 
+// Product section deep links into Skin Restore RX (tagged so RX can see this traffic)
+const rx = (path) => `https://www.skinrestorerx.com${path}?utm_source=skinrestoreoc&utm_medium=referral`;
+
 // Three signature treatments, showcased with photos (swap freely)
 const signature = [
   { href: '/diamondglow', name: 'DiamondGlow', img: 'diamondglow.jpg',
@@ -166,7 +169,20 @@ const treatments = [
         your results between visits.
       </p>
       {b.shopLive
-        ? <p><a class="btn btn--quiet" href={b.shopUrl}>Shop skincare</a></p>
+        ? <>
+            <p>Our full range is available online at Skin Restore Rx, shipped from our own stock.</p>
+            <div class="shop__links">
+              <div>
+                <h3 class="shop__h">Shop by concern</h3>
+                <ul>{b.shopLinks.concerns.map((l) => <li><a href={rx(l.path)}>{l.label}</a></li>)}</ul>
+              </div>
+              <div>
+                <h3 class="shop__h">Shop by brand</h3>
+                <ul>{b.shopLinks.brands.map((l) => <li><a href={rx(l.path)}>{l.label}</a></li>)}</ul>
+              </div>
+            </div>
+            <p><a class="btn btn--quiet" href={b.shopUrl}>Shop all skincare</a></p>
+          </>
         : <p class="shop__ask">Ask about the right products for your skin at your next appointment.</p>}
     </div>
   </section>
@@ -251,6 +267,10 @@ const treatments = [
 
   /* Products */
   .shop__ask { font-family: var(--display); font-size: var(--t-md); color: var(--marine); }
+  .shop__links { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: var(--s-5); margin-top: var(--s-5); }
+  .shop__h { font-size: var(--t-sm, 0.875rem); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-40); }
+  .shop__links ul { list-style: none; padding: 0; margin: var(--s-3) 0 0; display: grid; gap: .5rem; }
+  .shop__links a { color: var(--marine); }
 
   /* Visit band */
   .visit { position: relative; min-height: clamp(28rem, 70vh, 42rem); display: flex; align-items: flex-end; }
