@@ -1,6 +1,7 @@
 ---
 import { business as b, siteUrl } from '../data/business.js';
-const { service, faqs } = Astro.props;
+const { service, faqs, article, blog } = Astro.props;
+const pageUrl = `${siteUrl}${Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '')}`;
 
 const localBusiness = {
   '@type': ['HealthAndBeautyBusiness', 'DaySpa'],
@@ -51,6 +52,48 @@ if (service) {
     provider: { '@id': `${siteUrl}/#business` },
     areaServed: b.areasServed.map((n) => ({ '@type': 'Place', name: n })),
     url: `${siteUrl}${Astro.url.pathname}`,
+  });
+}
+
+if (article) {
+  graph.push({
+    '@type': 'BlogPosting',
+    '@id': `${pageUrl}#article`,
+    headline: article.headline,
+    description: article.description,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified,
+    ...(article.image && { image: new URL(article.image, siteUrl).href }),
+    ...(article.keywords?.length && { keywords: article.keywords.join(', ') }),
+    mainEntityOfPage: pageUrl,
+    // Credit Demi only on posts she has actually reviewed.
+    author: article.reviewedByDemi
+      ? { '@type': 'Person', name: b.practitioner, jobTitle: b.credential, url: `${siteUrl}/about` }
+      : { '@id': `${siteUrl}/#business` },
+    publisher: { '@id': `${siteUrl}/#business` },
+  });
+  graph.push({
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Blog', item: `${siteUrl}/blog` },
+      { '@type': 'ListItem', position: 2, name: article.headline, item: pageUrl },
+    ],
+  });
+}
+
+if (blog) {
+  graph.push({
+    '@type': 'Blog',
+    '@id': `${siteUrl}/blog#blog`,
+    name: `${b.name} Blog`,
+    url: `${siteUrl}/blog`,
+    publisher: { '@id': `${siteUrl}/#business` },
+    blogPost: blog.posts.map((p) => ({
+      '@type': 'BlogPosting',
+      headline: p.headline,
+      url: `${siteUrl}${p.url}`,
+      datePublished: p.datePublished,
+    })),
   });
 }
 

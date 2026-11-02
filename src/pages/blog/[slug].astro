@@ -1,0 +1,184 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import BookButton from '../../components/BookButton.astro';
+import ApptOnly from '../../components/ApptOnly.astro';
+import { business as b } from '../../data/business.js';
+import treatments from '../../data/treatments.json';
+import { getPublishedPosts, readingMinutes, formatDate } from '../../lib/blog.js';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return posts.map((post, i) => ({
+    params: { slug: post.id },
+    props: { post, more: posts.filter((p) => p.id !== post.id).slice(0, 2) },
+  }));
+}
+
+const { post, more } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+const bySlug = Object.fromEntries(treatments.map((t) => [t.slug, t]));
+const related = d.treatments.map((s) => bySlug[s]).filter(Boolean);
+const minutes = readingMinutes(post.body);
+
+const article = {
+  headline: d.title,
+  description: d.description,
+  datePublished: d.publishDate.toISOString(),
+  dateModified: (d.updatedDate ?? d.publishDate).toISOString(),
+  image: d.image,
+  keywords: d.tags,
+  reviewedByDemi: d.reviewedByDemi,
+};
+---
+<Base
+  title={d.seoTitle ?? d.title}
+  description={d.description}
+  ogImage={d.image}
+  ogType="article"
+  article={article}
+  faqs={d.faqs}
+>
+  <nav class="page crumbs" aria-label="Breadcrumb">
+    <a href="/blog">Blog</a><span aria-hidden="true">/</span><span>{d.title}</span>
+  </nav>
+
+  <article class="page post">
+    <header class="post__head">
+      <p class="post__meta">
+        <time datetime={d.publishDate.toISOString()}>{formatDate(d.publishDate)}</time>
+        <span aria-hidden="true">·</span> {minutes} min read
+      </p>
+      <h1>{d.title}</h1>
+      <p class="post__lede">{d.description}</p>
+      <p class="post__by">
+        {d.reviewedByDemi
+          ? <>Reviewed by <a href="/about">{b.practitioner}</a>, {b.credential}</>
+          : <>From the team at {b.name}, {b.city}</>}
+      </p>
+    </header>
+
+    {d.image && (
+      <figure class="post__fig">
+        <img src={d.image} alt={d.imageAlt ?? ''} width="1600" height="900" fetchpriority="high" />
+      </figure>
+    )}
+
+    <div class="post__body prose">
+      <Content />
+    </div>
+
+    {d.faqs.length > 0 && (
+      <section class="post__faq">
+        <h2>Common questions</h2>
+        <div class="faq">
+          {d.faqs.map((f) => (
+            <details class="faq__item">
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <p class="post__note">
+      This article is general education, not medical advice. Which treatment suits your skin is
+      decided at your consultation.
+    </p>
+  </article>
+
+  {related.length > 0 && (
+    <section class="section page">
+      <h2>Treatments mentioned</h2>
+      <ul class="rel">
+        {related.map((r) => (
+          <li>
+            <a class="rel__link" href={`/${r.slug}`}>
+              <span class="rel__name">{r.name}</span>
+              <span class="rel__desc">{r.description}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {more.length > 0 && (
+    <section class="section--wash">
+      <div class="page section">
+        <h2>More from the blog</h2>
+        <ul class="rel">
+          {more.map((p) => (
+            <li>
+              <a class="rel__link" href={`/blog/${p.id}`}>
+                <span class="rel__name">{p.data.title}</span>
+                <span class="rel__desc">{p.data.description}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <section class="section--dark">
+    <div class="page section closer">
+      <h2>Talk it through with Demi</h2>
+      <ApptOnly tone="light" />
+      <div class="cta-row">
+        <BookButton label="Book an appointment" tone="light" />
+        <a class="tel" href={b.phoneHref}>or call {b.phone}</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .crumbs { padding-top: var(--s-5); font-size: var(--t-xs); color: var(--ink-40); display: flex; gap: var(--s-2); flex-wrap: wrap; }
+  .crumbs a { color: var(--ink-70); text-decoration: none; }
+  .crumbs a:hover { color: var(--marine); text-decoration: underline; }
+
+  .post { max-width: calc(46rem + 2 * var(--gutter)); padding-block: var(--s-6) var(--s-8); }
+  .post__meta { font-size: var(--t-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-40); margin: 0 0 var(--s-4); }
+  .post__head h1 { font-size: var(--t-xl); line-height: 1.1; max-width: 22ch; }
+  .post__lede { font-family: var(--display); font-size: var(--t-md); color: var(--ink-70); margin-top: var(--s-5); max-width: 40rem; }
+  .post__by { font-size: var(--t-sm); color: var(--ink-70); border-top: 1px solid var(--rule); padding-top: var(--s-4); margin-top: var(--s-5); max-width: none; }
+
+  .post__fig { margin: var(--s-6) 0 0; }
+  .post__fig img { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; border-radius: 4px; }
+
+  .post__body { margin-top: var(--s-7); }
+  .post__body :global(p), .post__body :global(ul), .post__body :global(ol) { max-width: 40rem; }
+  .post__body :global(h2) { font-size: var(--t-lg); margin-top: var(--s-7); margin-bottom: var(--s-4); }
+  .post__body :global(h3) { font-size: var(--t-md); font-family: var(--sans); font-weight: 600; margin-top: var(--s-6); margin-bottom: var(--s-3); }
+  .post__body :global(ol) { padding-left: 1.3em; margin: 0 0 var(--s-4); }
+  .post__body :global(blockquote) { border-left: 2px solid var(--brand); padding-left: var(--s-5); margin: var(--s-6) 0; color: var(--ink-70); max-width: 40rem; }
+  .post__body :global(img) { border-radius: 4px; margin-block: var(--s-5); }
+
+  .post__faq { margin-top: var(--s-8); }
+  .post__faq h2 { font-size: var(--t-lg); }
+  .faq { margin-top: var(--s-5); border-top: 1px solid var(--sand-d); }
+  .faq__item { border-bottom: 1px solid var(--sand-d); }
+  .faq__item summary {
+    cursor: pointer; list-style: none; padding: var(--s-4) var(--s-6) var(--s-4) 0;
+    font-family: var(--display); font-size: var(--t-md); position: relative;
+  }
+  .faq__item summary::-webkit-details-marker { display: none; }
+  .faq__item summary::after { content: '+'; position: absolute; right: 0; top: var(--s-4); color: var(--marine); font-size: 1.3rem; line-height: 1; }
+  .faq__item[open] summary::after { content: '–'; }
+  .faq__item p { padding-bottom: var(--s-4); color: var(--ink-70); }
+
+  .post__note { font-size: var(--t-xs); color: var(--ink-40); margin-top: var(--s-7); border-top: 1px solid var(--rule); padding-top: var(--s-4); max-width: none; }
+
+  .rel { list-style: none; padding: 0; margin: var(--s-5) 0 0; max-width: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: var(--s-5); }
+  .rel li { margin: 0; }
+  .rel__link { display: block; text-decoration: none; color: var(--ink); border-top: 1px solid var(--rule); padding-top: var(--s-4); }
+  .rel__name { display: block; font-family: var(--display); font-size: var(--t-md); margin-bottom: var(--s-2); }
+  .rel__link:hover .rel__name { color: var(--marine); }
+  .rel__desc { display: block; font-size: var(--t-sm); color: var(--ink-70); }
+
+  .closer :global(.appt) { margin-top: var(--s-4); }
+  .cta-row { display: flex; align-items: center; gap: var(--s-5); flex-wrap: wrap; margin-top: var(--s-5); }
+</style>

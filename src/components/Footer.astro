@@ -1,5 +1,7 @@
 ---
 import { business as b } from '../data/business.js';
+import { getPublishedPosts } from '../lib/blog.js';
+const hasBlog = (await getPublishedPosts()).length > 0;
 const year = new Date().getFullYear();
 ---
 <footer class="ft">
@@ -53,6 +55,7 @@ const year = new Date().getFullYear();
       <h4 class="ft__h">Visit</h4>
       <a href="/treatments">All treatments</a>
       <a href="/about">About Demi</a>
+      {hasBlog && <a href="/blog">Blog</a>}
       <a href="/contact">Contact</a>
       {b.shopLive && <a href={b.shopUrl}>Shop skincare</a>}
     </div>
