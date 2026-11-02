@@ -5,7 +5,8 @@ import Footer from '../components/Footer.astro';
 import Schema from '../components/Schema.astro';
 import { siteUrl } from '../data/business.js';
 
-const { title, description, service, faqs, ogImage = '/images/waiting-room.jpg', overlayNav = false, noindex = false } = Astro.props;
+const { title, description, service, faqs, article, blog, ogImage: ogImageProp, ogType = 'website', overlayNav = false, noindex = false } = Astro.props;
+const ogImage = ogImageProp ?? '/images/waiting-room.jpg';
 // Build output is .html files, but the public URLs are extensionless.
 // Strip .html and index so canonicals point at the real URL.
 const routePath = Astro.url.pathname
@@ -26,7 +27,7 @@ const fullTitle = title.includes('Skin Restore') ? title : `${title} | Skin Rest
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex, follow" />}
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="Skin Restore" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
@@ -45,7 +46,7 @@ const fullTitle = title.includes('Skin Restore') ? title : `${title} | Skin Rest
       href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@400;500;600&display=swap"
     />
 
-    <Schema service={service} faqs={faqs} />
+    <Schema service={service} faqs={faqs} article={article} blog={blog} />
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>

@@ -1,0 +1,70 @@
+---
+// The blog index at /blog. It is only built once at least one post is
+// published, so there is never an empty, thin page for Google to crawl.
+import Base from '../../layouts/Base.astro';
+import { getPublishedPosts, readingMinutes, formatDate } from '../../lib/blog.js';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return posts.length ? [{ params: { page: undefined }, props: { posts } }] : [];
+}
+
+const { posts } = Astro.props;
+const [lead, ...rest] = posts;
+---
+<Base
+  title="Skin Care Blog — San Clemente Esthetician"
+  description="Straight answers on facials, peels and skin care from Skin Restore, a licensed esthetician's studio in San Clemente, CA."
+  blog={{ posts: posts.map((p) => ({ url: `/blog/${p.id}`, headline: p.data.title, datePublished: p.data.publishDate.toISOString() })) }}
+>
+  <section class="page section bl">
+    <p class="bl__eyebrow">Skin Restore Blog</p>
+    <h1>Straight answers about your skin</h1>
+    <p class="bl__intro">
+      What treatments actually do, how to prepare for them, and how to look after your skin between visits.
+    </p>
+
+    <a class="bl__lead" href={`/blog/${lead.id}`}>
+      {lead.data.image && <img src={lead.data.image} alt={lead.data.imageAlt ?? ''} width="1600" height="900" />}
+      <div>
+        <p class="bl__meta">{formatDate(lead.data.publishDate)} · {readingMinutes(lead.body)} min read</p>
+        <h2 class="bl__title">{lead.data.title}</h2>
+        <p class="bl__desc">{lead.data.description}</p>
+      </div>
+    </a>
+
+    {rest.length > 0 && (
+      <ul class="bl__list">
+        {rest.map((p) => (
+          <li>
+            <a href={`/blog/${p.id}`}>
+              <p class="bl__meta">{formatDate(p.data.publishDate)} · {readingMinutes(p.body)} min read</p>
+              <h2 class="bl__title bl__title--sm">{p.data.title}</h2>
+              <p class="bl__desc">{p.data.description}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+</Base>
+
+<style>
+  .bl__eyebrow, .bl__meta { font-size: var(--t-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-40); margin: 0 0 var(--s-3); }
+  .bl h1 { font-size: var(--t-xl); max-width: 18ch; }
+  .bl__intro { font-family: var(--display); font-size: var(--t-md); color: var(--ink-70); margin-top: var(--s-4); }
+
+  .bl__lead { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; margin-top: var(--s-7); padding-top: var(--s-6); border-top: 1px solid var(--rule); text-decoration: none; color: var(--ink); }
+  .bl__lead img { aspect-ratio: 16 / 10; object-fit: cover; width: 100%; border-radius: 4px; }
+  .bl__lead:not(:has(img)) { grid-template-columns: 1fr; }
+  .bl__title { font-size: var(--t-lg); line-height: 1.15; }
+  .bl__title--sm { font-size: var(--t-md); }
+  .bl__desc { font-size: var(--t-sm); color: var(--ink-70); margin-top: var(--s-3); }
+  .bl a:hover .bl__title { color: var(--marine); }
+
+  .bl__list { list-style: none; padding: 0; margin: var(--s-7) 0 0; max-width: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: var(--s-6); }
+  .bl__list li { margin: 0; }
+  .bl__list a { display: block; text-decoration: none; color: var(--ink); border-top: 1px solid var(--rule); padding-top: var(--s-4); }
+
+  @media (max-width: 48rem) { .bl__lead { grid-template-columns: 1fr; } }
+</style>

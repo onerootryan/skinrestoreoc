@@ -50,6 +50,23 @@ The deliberate feature is the credentials strip under the hero — licence numbe
 years, former role — treated as structure rather than decoration, because
 verifiable credentials are the actual differentiator.
 
+## Blog
+
+Posts live in `src/content/blog/`, one Markdown file per post; the filename is the URL
+(`/blog/<filename>`). Copy `src/content/blog/_TEMPLATE.md` to start one. Files starting
+with `_` are ignored.
+
+- `/blog`, the nav "Blog" link and the footer link only appear once the first post is published.
+- Each post gets BlogPosting, BreadcrumbList and (if it has `faqs`) FAQPage schema, plus
+  "Treatments mentioned" cards for its `treatments` slugs and a booking band.
+- The build **fails** if a post links a treatment slug that doesn't exist, points at an image
+  missing from `public/images`, or has an over-long title/description, so a bad post can
+  never replace the live site.
+- `reviewedByDemi: true` switches the byline and schema author to Demi. Only set it when she
+  has actually read the post.
+- New posts arrive weekly as pull requests (approve-first). Merging the PR publishes the post;
+  closing it discards it.
+
 ## Deploy
 
 Netlify picks up `netlify.toml`: `npm run build`, publish `dist`.
