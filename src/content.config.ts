@@ -22,13 +22,29 @@ const blog = defineCollection({
     description: z.string().min(70).max(160),
     publishDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    // Image in /public/images, e.g. "/images/diamondglow.jpg". Must exist.
+    // Either a local image in /public/images (e.g. "/images/diamondglow.jpg", must exist),
+    // a hotlinked Unsplash photo (https://images.unsplash.com/..., per Unsplash's API rules),
+    // or a licensed stock photo hosted in Skin Restore's Cloudinary account.
     image: z
       .string()
-      .regex(/^\/images\/[\w.-]+\.(jpe?g|png|webp)$/)
-      .refine((p) => existsSync(`./public${p}`), { message: 'Image not found in public/images' })
+      .refine(
+        (p) =>
+          /^\/images\/[\w.-]+\.(jpe?g|png|webp)$/.test(p)
+            ? existsSync(`./public${p}`)
+            : /^https:\/\/(images\.unsplash\.com|res\.cloudinary\.com\/x2sxptbc)\//.test(p),
+        { message: 'Image must exist in public/images, or be an images.unsplash.com / Skin Restore Cloudinary URL' },
+      )
       .optional(),
     imageAlt: z.string().optional(),
+    // Required for stock photos: shown under the image ("Photo by <name> on <source>").
+    imageCredit: z
+      .object({
+        name: z.string(),
+        url: z.string().url().optional(),
+        source: z.enum(['Unsplash', 'Adobe Stock', 'Shutterstock']),
+        sourceUrl: z.string().url().optional(),
+      })
+      .optional(),
     // Treatment pages this post supports — shown as cards and linked. Slugs from treatments.json.
     treatments: z.array(z.enum(treatmentSlugs)).max(3).default([]),
     tags: z.array(z.string()).default([]),
@@ -36,6 +52,9 @@ const blog = defineCollection({
     // Only set when Demi has actually read and approved the post.
     reviewedByDemi: z.boolean().default(false),
     draft: z.boolean().default(false),
+  }).refine((d) => !d.image?.startsWith('https://') || d.imageCredit, {
+    message: 'Stock photos (remote image URLs) need an imageCredit',
+    path: ['imageCredit'],
   }),
 });
 

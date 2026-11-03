@@ -5,8 +5,14 @@ title: "Keyword-led headline, under ~70 characters"
 seoTitle: "Optional shorter title tag, max 46 chars"   # " | Skin Restore" is added
 description: "70-160 characters. Shown in Google and on /blog. No prices, no medical claims."
 publishDate: 2026-01-01
-image: /images/diamondglow.jpg        # must exist in public/images
+image: /images/diamondglow.jpg        # must exist in public/images, OR a stock photo URL (see README)
 imageAlt: "Describe the photo"
+# imageCredit is required for stock photos (Unsplash / Adobe Stock) and shown under the image:
+# imageCredit:
+#   name: "Photographer Name"
+#   url: "https://unsplash.com/@username?utm_source=skin_restore&utm_medium=referral"
+#   source: "Unsplash"                # Unsplash | Adobe Stock | Shutterstock
+#   sourceUrl: "https://unsplash.com/?utm_source=skin_restore&utm_medium=referral"
 treatments: [diamondglow]             # up to 3 slugs from src/data/treatments.json
 tags: [facials]
 faqs:
