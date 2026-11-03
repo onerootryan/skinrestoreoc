@@ -62,6 +62,17 @@ const article = {
     {d.image && (
       <figure class="post__fig">
         <img src={d.image} alt={d.imageAlt ?? ''} width="1600" height="900" fetchpriority="high" />
+        {d.imageCredit && (
+          <figcaption class="post__credit">
+            Photo by {d.imageCredit.url
+              ? <a href={d.imageCredit.url} rel="noopener">{d.imageCredit.name}</a>
+              : d.imageCredit.name}
+            {' on '}
+            {d.imageCredit.sourceUrl
+              ? <a href={d.imageCredit.sourceUrl} rel="noopener">{d.imageCredit.source}</a>
+              : d.imageCredit.source}
+          </figcaption>
+        )}
       </figure>
     )}
 
@@ -148,6 +159,8 @@ const article = {
 
   .post__fig { margin: var(--s-6) 0 0; }
   .post__fig img { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; border-radius: 4px; }
+  .post__credit { margin-top: var(--s-2, 0.5rem); font-size: 0.8rem; opacity: 0.7; }
+  .post__credit a { color: inherit; }
 
   .post__body { margin-top: var(--s-7); }
   .post__body :global(p), .post__body :global(ul), .post__body :global(ol) { max-width: 40rem; }
