@@ -34,6 +34,7 @@ const treatments = [
         <summary>Treatments</summary>
         <div class="nav__ddmenu">
           <a class="nav__ddall" href="/treatments" aria-current={path === '/treatments' ? 'page' : undefined}>All treatments</a>
+          <a href="/facials" aria-current={path === '/facials' ? 'page' : undefined}>Facials: where to start</a>
           {treatments.map((t) => (
             <a href={t.href} aria-current={path === t.href ? 'page' : undefined}>{t.label}</a>
           ))}

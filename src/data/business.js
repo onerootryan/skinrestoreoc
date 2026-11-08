@@ -65,6 +65,15 @@ export const business = {
   //   All other treatment photos are manufacturer/licensed material.
   clientPhotoConsent: true,
 
+  // Google Ads conversion tracking (the spa's account, 857-641-3313 — never the
+  // Skin Restore Rx account). Leave id blank and nothing loads. Once the account
+  // is active, create two conversion actions in Google Ads and paste them here:
+  //   id:        'AW-XXXXXXXXXX' (the account's tag ID)
+  //   bookLabel: label of the "Book button click" conversion
+  //   callLabel: label of the "Phone number click" conversion
+  // Booking happens on Square's site, so the Book click is the conversion.
+  googleAds: { id: '', bookLabel: '', callLabel: '' },
+
   appointmentOnly: true,
   hoursNote: 'By appointment only',
   hours: [
