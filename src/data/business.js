@@ -72,7 +72,7 @@ export const business = {
   //   bookLabel: label of the "Book button click" conversion
   //   callLabel: label of the "Phone number click" conversion
   // Booking happens on Square's site, so the Book click is the conversion.
-  googleAds: { id: '', bookLabel: '', callLabel: '' },
+  googleAds: { id: 'AW-16544075583', bookLabel: '17oYCPDFzbQdEL-e6tA9', callLabel: 'QzhkCOjAzbQdEL-e6tA9' },
 
   appointmentOnly: true,
   hoursNote: 'By appointment only',
