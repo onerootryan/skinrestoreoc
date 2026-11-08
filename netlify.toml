@@ -114,6 +114,12 @@
   force = true
 
 [[redirects]]
+  from = "/facials.html"
+  to = "/facials"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/microchanneling.html"
   to = "/microchanneling"
   status = 301
