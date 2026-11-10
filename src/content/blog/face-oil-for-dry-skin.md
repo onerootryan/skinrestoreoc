@@ -2,7 +2,7 @@
 title: "Best Face Oil for Dry Skin: How to Choose and Use One"
 seoTitle: "Face Oil for Dry Skin: How to Choose One"
 description: "What a face oil does for dry skin, how it differs from moisturizer, how to apply it, and who should skip essential-oil formulas. A plain-spoken guide."
-publishDate: 2026-11-04
+publishDate: 2026-11-10
 image: /images/breeze-treatment.jpg
 imageAlt: "The BREEZE handpiece delivering a fine stream of air and serum to a client's cheek during a needle-free oxygen facial"
 treatments: [oxygen-facial, dermaplaning]
