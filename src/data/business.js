@@ -32,11 +32,11 @@ export const business = {
   // Standalone Square Appointments booking flow — lives on Square's domain,
   // so it keeps working after skinrestoreoc.com moves to Netlify.
   bookingUrl: 'https://book.squareup.com/appointments/iqeoshu0dfmonc/location/LRDN4QX13C2V0/services',
-  // Flip to true when Skin Restore RX launches — restores the Shop link in the
-  // nav, the footer, and the homepage product section, all at once.
-  // Keep false until the Online Store password is removed (target Nov 16, 2026),
-  // or visitors land on a password page.
-  shopLive: false,
+  // Turns on the Shop link in the nav, the footer, and the homepage product
+  // section, all at once. Switched on Nov 13, 2026, ahead of the Skin Restore Rx
+  // launch on Nov 15 (Ryan's call: visitors see the coming-soon page until the
+  // Online Store password comes off).
+  shopLive: true,
   shopUrl: 'https://www.skinrestorerx.com/?utm_source=skinrestoreoc&utm_medium=referral',
   // Deep links for the homepage product section: each goes straight to the
   // matching Skin Restore RX page. No prices on this site — RX shows them.
