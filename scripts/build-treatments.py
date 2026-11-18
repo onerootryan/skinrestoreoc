@@ -32,7 +32,7 @@ META = {
         desc='Wonder Touch radiofrequency skin tightening in San Clemente. Firms, lifts and smooths without surgery, needles or downtime. Results build over a series.'),
     'oxygen-facial': dict(
         name='BREEZE Cryo Oxygen', image='breeze-treatment.jpg', service='Oxygen facial',
-        alt='A client resting during a facial treatment in the studio at Skin Restore, San Clemente',
+        alt='A client resting during a facial treatment in the spa at Skin Restore, San Clemente',
         desc='BREEZE needle-free oxygen facial in San Clemente — pressurized air infuses actives with lymphatic drainage and exfoliation. Comfortable, no downtime.'),
     'cryo-facial': dict(
         name='Cool Restore Cryo', image='cool-restore.jpg', service='Cryotherapy facial',
