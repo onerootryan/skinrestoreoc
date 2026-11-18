@@ -1,0 +1,116 @@
+---
+import Base from '../layouts/Base.astro';
+import { business as b } from '../data/business.js';
+const updated = 'November 17, 2026';
+---
+<Base
+  title="Privacy Policy | Skin Restore"
+  description="How Skin Restore in San Clemente collects, uses and protects client information, including email and text message details."
+>
+  <section class="section page">
+    <div class="prose">
+      <h1>Privacy Policy</h1>
+      <p>Last updated: {updated}</p>
+
+      <p>
+        This policy explains what information {b.name} collects, how we use it, and the
+        choices you have. {b.name} is located at {b.street}, {b.city}, {b.region} {b.postal}.
+      </p>
+
+      <h2>Information we collect</h2>
+      <ul>
+        <li>
+          <strong>Contact details:</strong> your name, email address and mobile phone number,
+          which you give us when you book an appointment, fill in a client form, send a
+          message through this website, or sign up to hear from us.
+        </li>
+        <li>
+          <strong>Appointment and treatment details:</strong> the services you book, your
+          appointment history, and the skin history and product information you share with
+          us so we can treat you safely.
+        </li>
+        <li>
+          <strong>Purchase details:</strong> what you buy from us. Card payments are processed
+          by our payment provider; we do not store full card numbers.
+        </li>
+        <li>
+          <strong>Website usage:</strong> basic information about visits to this site, such as
+          pages viewed and the general source of the visit, collected through analytics and
+          advertising measurement tools.
+        </li>
+      </ul>
+
+      <h2>How we use it</h2>
+      <ul>
+        <li>To book, confirm and manage your appointments.</li>
+        <li>To provide treatments and recommend products suited to your skin.</li>
+        <li>To answer your questions and messages.</li>
+        <li>
+          To send you news, offers and product recommendations by email or text message,
+          when you have agreed to receive them.
+        </li>
+        <li>To understand how this website is used and to measure our advertising.</li>
+      </ul>
+
+      <h2>Text messages</h2>
+      <p>
+        If you agree to receive text messages from {b.name}, we may text you about
+        appointments, offers and products, including products sold by our online store,
+        Skin Restore Rx. Message frequency varies. Message and data rates may apply.
+      </p>
+      <p>
+        Reply STOP to any text to unsubscribe at any time. Reply HELP for help, or call us
+        at <a href={b.phoneHref}>{b.phone}</a>. Agreeing to receive texts is not a condition
+        of booking or buying anything.
+      </p>
+      <p>
+        <strong>
+          Mobile information and text messaging consent will not be shared with or sold to
+          third parties or affiliates for marketing or promotional purposes.
+        </strong>
+        Your mobile number and consent are shared only with the service providers that send
+        our messages on our behalf.
+      </p>
+
+      <h2>Who we share information with</h2>
+      <p>
+        We do not sell your personal information. We share it only with service providers
+        that help us run the business, such as our booking and payment system, our email
+        and text messaging platform, and our website host, and only so they can provide
+        those services to us. We may also disclose information when the law requires it.
+      </p>
+
+      <h2>Your choices</h2>
+      <ul>
+        <li>Unsubscribe from emails using the link at the bottom of any email.</li>
+        <li>Unsubscribe from texts by replying STOP.</li>
+        <li>
+          Ask us what information we hold about you, or ask us to correct or delete it, by
+          calling <a href={b.phoneHref}>{b.phone}</a> or using our
+          <a href="/contact">contact page</a>.
+        </li>
+      </ul>
+
+      <h2>Keeping information safe</h2>
+      <p>
+        We keep client information in the systems of established service providers and
+        limit access to the people who need it to serve you. No system is perfectly secure,
+        but we take reasonable steps to protect your information.
+      </p>
+
+      <h2>Changes to this policy</h2>
+      <p>
+        If we change this policy, we will post the new version on this page and update the
+        date above.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        {b.name}<br />
+        {b.street}<br />
+        {b.city}, {b.region} {b.postal}<br />
+        <a href={b.phoneHref}>{b.phone}</a>
+      </p>
+    </div>
+  </section>
+</Base>
