@@ -1,7 +1,7 @@
 ---
 title: "Dermaplaning vs Microdermabrasion: Which Is Right for You?"
 seoTitle: "Dermaplaning vs Microdermabrasion"
-description: "How dermaplaning and microdermabrasion differ, what each one feels like, who each suits, and how to choose between them, from a licensed esthetician's studio."
+description: "How dermaplaning and microdermabrasion differ, what each one feels like, who each suits, and how to choose between them, from a licensed esthetician's spa."
 publishDate: 2026-11-18
 image: /images/dermaplane.jpg
 imageAlt: "A sterile blade held at an angle against a client's jawline during a dermaplaning treatment"
@@ -18,7 +18,7 @@ faqs:
     a: "Dermaplaning usually leaves slight pinkness for a few minutes. A diamond-tip treatment such as DiamondGlow may leave skin a little pink for about 15 to 30 minutes. Most people go straight back to their day."
   - q: "Does dermaplaning make hair grow back thicker?"
     a: "No. Vellus hair grows back at the same thickness and color. The regrowth can feel slightly different for a few days because the cut end is blunt rather than tapered, but the hair itself hasn't changed."
-reviewedByDemi: false
+reviewedByDemi: true
 draft: false
 ---
 Dull, rough skin that drinks up moisturizer and still looks flat is one of the most common reasons people book a facial. Dermaplaning and microdermabrasion both go after that dull top layer, and they get mentioned together so often that it's easy to assume they're the same thing; they aren't, and the difference matters when you're choosing one.
@@ -93,8 +93,8 @@ If breakouts are the main concern, a different plan, such as a series of profess
 
 At Skin Restore in San Clemente, [dermaplaning](/dermaplaning) is offered two ways. As a standalone treatment it takes about 30 minutes: cleansing and prep, dermaplaning the whole face in careful sections, then a treatment mask and serums chosen for your skin. As an add-on it takes about 15 minutes at the start of another treatment, and it pairs particularly well with BREEZE or DiamondGlow.
 
-The studio doesn't offer classic crystal microdermabrasion. Its closest equivalent is the [DiamondGlow facial](/diamondglow), which uses a diamond-tipped wand with suction to exfoliate and extract, while delivering a serum into the freshly exfoliated skin in the same pass. That last step is what sets it apart from standard microdermabrasion. You choose from five serum types (hydration, brightening, clarifying, skin-firming and pore clarifying) based on what your skin is doing that day. The appointment runs about 30 to 45 minutes, and skin may look a little pink for 15 to 30 minutes afterward.
+The spa doesn't offer classic crystal microdermabrasion. Its closest equivalent is the [DiamondGlow facial](/diamondglow), which uses a diamond-tipped wand with suction to exfoliate and extract, while delivering a serum into the freshly exfoliated skin in the same pass. That last step is what sets it apart from standard microdermabrasion. You choose from five serum types (hydration, brightening, clarifying, skin-firming and pore clarifying) based on what your skin is doing that day. The appointment runs about 30 to 45 minutes, and skin may look a little pink for 15 to 30 minutes afterward.
 
 DiamondGlow and dermaplaning are often booked together in one visit. A peel isn't combined with DiamondGlow on the same day.
 
-Every appointment is with Demi Broughton, a licensed esthetician with more than 15 years of experience, who will look at your skin before recommending either one. Results vary from person to person, and pricing is confirmed at your consultation. You can see the full menu on the [treatments page](/treatments). The studio serves clients from across South Orange County, including Dana Point, San Juan Capistrano and Laguna Niguel.
+Every appointment is with Demi Broughton, a licensed esthetician with more than 15 years of experience, who will look at your skin before recommending either one. Results vary from person to person, and pricing is confirmed at your consultation. You can see the full menu on the [treatments page](/treatments). The spa serves clients from across South Orange County, including Dana Point, San Juan Capistrano and Laguna Niguel.
