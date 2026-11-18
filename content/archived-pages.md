@@ -6,7 +6,7 @@ restored without rewriting. To restore a page: move its block back into
 entry to META in `scripts/build-treatments.py`.
 
 **Fire and Ice Facial** — archived at Demi's direction. Offered case by case,
-booked directly by the studio; hidden in Square Appointments and not advertised.
+booked directly by the spa; hidden in Square Appointments and not advertised.
 (Search demand for reference: "fire and ice facial" ~1,800/month.)
 
 ---
