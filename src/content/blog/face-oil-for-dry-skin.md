@@ -18,7 +18,7 @@ faqs:
     a: "You can, but check the ingredients first. Formulas with citrus oils, such as lemon peel oil, are better kept for night because citrus oils can make skin more sensitive to the sun. Whatever you use in the morning, finish with sunscreen."
   - q: "Is face oil OK if I'm pregnant or using a prescription skin product?"
     a: "Check with your doctor first, especially for formulas with essential oils, and mention it at your consultation along with anything prescribed for your skin, such as a retinoid. Your esthetician can then suggest options that suit your situation."
-reviewedByDemi: false
+reviewedByDemi: true
 draft: false
 ---
 If your skin feels tight an hour after you moisturize, or makeup starts catching on flaky patches by lunchtime, a face oil is often the step people reach for next. It can help a great deal, but only once you know what it actually does and what it doesn't.
