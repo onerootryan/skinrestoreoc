@@ -23,7 +23,7 @@ faqs:
     a: "Check with your doctor first. That applies to any supplement, including ones aimed at skin, if you're pregnant or nursing, taking medications, or have a medical condition. Mention it at your consultation too, so your esthetician has the full picture."
   - q: "Which facial suits skin that feels sensitive or unsettled?"
     a: "Usually the gentlest one that still does something useful. At Skin Restore that often means Cool Restore Cryo or BREEZE Cryo Oxygen, neither of which uses scrubbing, acids or heat. Your esthetician will suggest what fits your skin at your consultation."
-reviewedByDemi: false
+reviewedByDemi: true
 draft: false
 ---
 If your skin feels tight after cleansing, stings when you apply products that used to be fine, or seems to get touchier the more you add to your routine, the problem may not be a missing product. It may be that your skin's natural balance needs less interference, and that's the idea behind microbiome skincare.
