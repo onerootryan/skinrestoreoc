@@ -62,7 +62,7 @@ with `_` are ignored.
 - The build **fails** if a post links a treatment slug that doesn't exist, points at an image
   missing from `public/images`, or has an over-long title/description, so a bad post can
   never replace the live site.
-- Post images can be a studio photo in `public/images`, or a stock photo:
+- Post images can be a spa photo in `public/images`, or a stock photo:
   - **Unsplash** (free): hotlink the `images.unsplash.com` URL the Unsplash API returns (add
     `&w=1600&h=900&fit=crop&auto=format&q=80`), register the download, and credit the
     photographer with `imageCredit` (Unsplash API rules: hotlink, track downloads, attribute).
