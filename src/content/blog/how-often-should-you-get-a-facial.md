@@ -18,7 +18,7 @@ faqs:
     a: "If you're starting a few months out, monthly facials give your skin time to settle into a routine. Book your last no-downtime facial a few days before the day itself, and save anything that causes visible peeling for weeks earlier, not days."
   - q: "Can I get a facial if I'm pregnant or using a retinoid?"
     a: "Some treatments may be fine and others may not. Check with your doctor first, and mention it at your consultation along with any prescription skin products you use, so your esthetician can choose or adjust the treatment."
-reviewedByDemi: false
+reviewedByDemi: true
 draft: false
 ---
 Most people book a facial when their skin looks tired or an event is coming up, then wonder whether they should be going more often. The honest answer is that the right rhythm depends less on a magic number and more on which treatment you're getting, what your skin is doing, and what you want from it.
