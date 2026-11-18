@@ -90,6 +90,6 @@ If you're not sure where to start, these questions help:
 
 ## What to expect at Skin Restore
 
-Skin Restore is a by-appointment studio in San Clemente, run by licensed esthetician Demi Broughton. A first visit starts with a look at your skin and a conversation about your goals, your routine and your schedule, so the plan fits your skin rather than a generic calendar.
+Skin Restore is a by-appointment spa in San Clemente, run by licensed esthetician Demi Broughton. A first visit starts with a look at your skin and a conversation about your goals, your routine and your schedule, so the plan fits your skin rather than a generic calendar.
 
 From there, the suggested rhythm follows the treatment. DiamondGlow appointments run about 30 to 45 minutes, with the serum chosen for what your skin needs that day, and most clients come in monthly to maintain. Dermaplaning can be booked on its own or as a roughly 15-minute add-on before another treatment, typically every four to six weeks. Peels are matched by depth to your skin, and stronger ones may involve a few weeks of at-home prep beforehand. You'll leave knowing when it makes sense to come back and what to do at home in between. The full menu is on the [treatments page](/treatments).
