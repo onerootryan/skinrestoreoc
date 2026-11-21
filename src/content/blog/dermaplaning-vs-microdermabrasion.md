@@ -97,4 +97,4 @@ The spa doesn't offer classic crystal microdermabrasion. Its closest equivalent 
 
 DiamondGlow and dermaplaning are often booked together in one visit. A peel isn't combined with DiamondGlow on the same day.
 
-Every appointment is with Demi Broughton, a licensed esthetician with more than 15 years of experience, who will look at your skin before recommending either one. Results vary from person to person, and pricing is confirmed at your consultation. You can see the full menu on the [treatments page](/treatments). The spa serves clients from across South Orange County, including Dana Point, San Juan Capistrano and Laguna Niguel.
+Every appointment is with Demi Broughton, a licensed esthetician with 17 years of experience, who will look at your skin before recommending either one. Results vary from person to person, and pricing is confirmed at your consultation. You can see the full menu on the [treatments page](/treatments). The spa serves clients from across South Orange County, including Dana Point, San Juan Capistrano and Laguna Niguel.
