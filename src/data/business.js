@@ -8,7 +8,7 @@ export const business = {
   credential: 'Licensed Esthetician',
   licenseNumber: 'Z91680',
   licenseBoard: 'California Board of Barbering and Cosmetology',
-  yearsExperience: '15+',
+  yearsExperience: '17',
   founded: '2020',
   phone: '(949) 545-7919',
   phoneHref: 'tel:+19495457919',
