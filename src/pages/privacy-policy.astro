@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { business as b } from '../data/business.js';
-const updated = 'November 17, 2026';
+const updated = 'November 22, 2026';
 ---
 <Base
   title="Privacy Policy | Skin Restore"
@@ -50,6 +50,10 @@ const updated = 'November 17, 2026';
           when you have agreed to receive them.
         </li>
         <li>To understand how this website is used and to measure our advertising.</li>
+        <li>
+          To show ads for {b.name} and our online store, Skin Restore Rx, on platforms such
+          as Instagram and Facebook, as described under Advertising below.
+        </li>
       </ul>
 
       <h2>Text messages</h2>
@@ -77,13 +81,34 @@ const updated = 'November 17, 2026';
         We do not sell your personal information. We share it only with service providers
         that help us run the business, such as our booking and payment system, our email
         and text messaging platform, and our website host, and only so they can provide
-        those services to us. We may also disclose information when the law requires it.
+        those services to us. Advertising platforms receive client email addresses only
+        as described under Advertising below. We may also disclose information when the law
+        requires it.
+      </p>
+
+      <h2>Advertising</h2>
+      <p>
+        We may use client email addresses to show ads for {b.name} and our online store,
+        Skin Restore Rx, on advertising platforms such as Instagram and Facebook, and to
+        avoid showing you ads that are not relevant to you. To do this, we send email
+        addresses to the platform in a hashed (scrambled) form so it can match them to its
+        own accounts. We do not sell this information, and we do not send mobile phone
+        numbers or text messaging consent to advertising platforms.
+      </p>
+      <p>
+        To opt out, call <a href={b.phoneHref}>{b.phone}</a> or use our
+        <a href="/contact">contact page</a> and we will remove your email address from
+        these advertising lists.
       </p>
 
       <h2>Your choices</h2>
       <ul>
         <li>Unsubscribe from emails using the link at the bottom of any email.</li>
         <li>Unsubscribe from texts by replying STOP.</li>
+        <li>
+          Ask us to stop using your email address for advertising, by calling
+          <a href={b.phoneHref}>{b.phone}</a> or using our <a href="/contact">contact page</a>.
+        </li>
         <li>
           Ask us what information we hold about you, or ask us to correct or delete it, by
           calling <a href={b.phoneHref}>{b.phone}</a> or using our
