@@ -7,7 +7,13 @@ const localBusiness = {
   '@type': ['HealthAndBeautyBusiness', 'DaySpa'],
   '@id': `${siteUrl}/#business`,
   name: b.name,
+  legalName: b.legalName,
   url: siteUrl,
+  logo: { '@type': 'ImageObject', url: `${siteUrl}/images/skin-restore-logo.png` },
+  image: `${siteUrl}/images/storefront-sunset.jpg`,
+  description: `${b.tagline}. Medical-grade facials and skin treatments in ${b.city}, ${b.region} by ${b.practitioner}, ${b.credential}.`,
+  foundingDate: b.founded,
+  ...(b.email && { email: b.email }),
   telephone: b.phone,
   priceRange: b.priceRange,
   address: {
