@@ -5,6 +5,11 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Tells Bing and other IndexNow engines about changed pages after each
+# production deploy. Key file lives in public/. See netlify/plugins/indexnow.
+[[plugins]]
+  package = "/netlify/plugins/indexnow"
+
 # Force HTTPS + canonical host (fixes the http://www duplicate found in the audit)
 [[redirects]]
   from = "https://skinrestoreoc.com/*"
